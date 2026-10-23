@@ -1,0 +1,181 @@
+/* =========================================
+   ESTILOS DA PÁGINA DE ATIVIDADES PRONTAS
+========================================= */
+
+/* Barra de Filtros por Categoria */
+.filter-bar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 35px;
+}
+
+.filter-btn {
+    background: var(--white, #ffffff);
+    color: var(--muted, #687c85);
+    border: 1px solid var(--border, #dfe7eb);
+    padding: 9px 18px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--teal, #477d76);
+    color: var(--navy, #173b50);
+}
+
+.filter-btn.active {
+    background: var(--teal, #477d76);
+    color: var(--white, #ffffff);
+    border-color: var(--teal, #477d76);
+}
+
+/* Grade de Cartões de Atividades */
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-bottom: 50px;
+}
+
+.activity-card {
+    background: var(--white, #ffffff);
+    border: 1px solid var(--border, #dfe7eb);
+    border-radius: 16px;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 15px rgba(23, 59, 80, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.activity-card:hover {
+    transform: translateY(-3px);
+    border-color: #b9d2c8;
+    box-shadow: 0 10px 24px rgba(23, 59, 80, 0.07);
+}
+
+.activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.activity-tag {
+    background: var(--mint, #e9f3ef);
+    color: var(--teal, #477d76);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.activity-level {
+    color: var(--muted, #687c85);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.activity-card h3 {
+    color: var(--navy, #173b50);
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.activity-card p {
+    color: #415760;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.activity-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border, #dfe7eb);
+    padding-top: 16px;
+    margin-top: auto;
+}
+
+.file-info {
+    color: var(--muted, #687c85);
+    font-size: 0.82rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.file-info i {
+    color: #e74c3c;
+    font-size: 1rem;
+}
+
+.download-btn {
+    background: var(--teal, #477d76);
+    color: var(--white, #ffffff);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 650;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.download-btn:hover {
+    background: var(--navy, #173b50);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   RODAPÉ (GARANTIA DE VISIBILIDADE)
+========================================= */
+
+.rodape {
+    width: 100%;
+    margin-top: 60px;
+    padding: 32px 20px;
+    border-top: 1px solid var(--border, #dfe7eb);
+    background: var(--white, #ffffff);
+    text-align: center;
+}
+
+.rodape-marca {
+    color: var(--navy, #173b50);
+    font-size: 23px;
+    font-weight: 800;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.rodape > p {
+    color: var(--muted, #687c85);
+    font-size: 13px;
+    margin: 0;
+}
+
+.rodape .rodape-frase {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+/* Adaptabilidade para Dispositivos Móveis */
+@media (max-width: 768px) {
+    .activities-grid {
+        grid-template-columns: 1fr;
+    }
+}

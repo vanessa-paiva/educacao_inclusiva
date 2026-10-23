@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#173B50">
+    <meta name="description" content="Atividades escolares prontas e adaptadas para download em diversas disciplinas.">
+    <title>Atividades Prontas | NEXO Edu</title>
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="atividades.css">
+</head>
+<body>
+
+    <!-- Menu Superior Padronizado e Funcional -->
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="../index.html" class="brand" aria-label="NEXO Edu - Página inicial">
+                <span class="brand-icon"><i class="bi bi-book-half"></i></span>
+                <span class="brand-text">
+                    <span class="brand-name">NEXO <span class="brand-highlight">Edu</span></span>
+                    <span class="brand-subtitle">Núcleo de Atividades Adaptadas — do Básico ao Avançado</span>
+                </span>
+            </a>
+
+            <nav class="top-nav" aria-label="Menu principal">
+                <a href="../index.html" class="nav-link">Início</a>
+                <a href="atividades.html" class="nav-link active">Atividades prontas</a>
+                <a href="../adaptacao-ia/adaptar.html" class="nav-link">Adaptar com IA</a>
+                <a href="../guias/modelo-pei.html" class="nav-link">Modelos de PEI</a>
+                <a href="../guias/guias.html" class="nav-link">Guias para professores</a>
+                <a href="../sobre.html" class="nav-link">Sobre</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <!-- Caixa de Boas-Vindas Padronizada -->
+        <section class="welcome-box">
+            <span class="badge">
+                <i class="bi bi-file-earmark-arrow-down-fill"></i>
+                Repositório Pedagógico
+            </span>
+
+            <h1 class="welcome-title">Atividades Prontas para Download</h1>
+
+            <p class="tagline">
+                “Materiais pedagógicos estruturados e acessíveis por disciplina, prontos para uso em sala de aula ou para impressão.”
+            </p>
+
+            <div class="informacoes-guia" style="display: flex; gap: 20px; font-size: 0.9rem; color: var(--muted); margin-top: 15px;">
+                <span>📚 Ensino Fundamental e Médio</span>
+                <span>📥 Formato pronto (PDF / DOC)</span>
+            </div>
+        </section>
+
+        <!-- Barra de Filtros por Matéria -->
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">Todas</button>
+            <button class="filter-btn" data-filter="matematica">Matemática</button>
+            <button class="filter-btn" data-filter="portugues">Português</button>
+            <button class="filter-btn" data-filter="ciencias">Ciências</button>
+            <button class="filter-btn" data-filter="humanas">História / Geografia</button>
+        </div>
+
+        <!-- Grade de Atividades por Matéria -->
+        <div class="activities-grid">
+
+            <!-- Card 1: Matemática -->
+            <div class="activity-card" data-category="matematica">
+                <div class="activity-header">
+                    <span class="activity-tag">Matemática</span>
+                    <span class="activity-level">Ensino Fundamental I / II</span>
+                </div>
+                <h3>Sistema Monetário e Troco Simples</h3>
+                <p>Atividade prática com situações-problema do cotidiano envolvendo cédulas, moedas e cálculo de troco com apoio visual.</p>
+                <div class="activity-footer">
+                    <span class="file-info"><i class="bi bi-file-earmark-pdf"></i> PDF • 3 págs</span>
+                    <a href="#" class="download-btn" onclick="alert('Aqui você poderá vincular o arquivo PDF da atividade!')">
+                        <i class="bi bi-download"></i> Baixar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2: Português -->
+            <div class="activity-card" data-category="portugues">
+                <div class="activity-header">
+                    <span class="activity-tag">Língua Portuguesa</span>
+                    <span class="activity-level">Anos Iniciais / Recomposição</span>
+                </div>
+                <h3>Leitura e Interpretação com Suporte Visual</h3>
+                <p>Texto curto acompanhado de sequência ilustrada para exercitar a compreensão leitora e localização de informações explícitas.</p>
+                <div class="activity-footer">
+                    <span class="file-info"><i class="bi bi-file-earmark-pdf"></i> PDF • 2 págs</span>
+                    <a href="#" class="download-btn" onclick="alert('Aqui você poderá vincular o arquivo PDF da atividade!')">
+                        <i class="bi bi-download"></i> Baixar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3: Ciências -->
+            <div class="activity-card" data-category="ciencias">
+                <div class="activity-header">
+                    <span class="activity-tag">Ciências</span>
+                    <span class="activity-level">Ensino Fundamental II</span>
+                </div>
+                <h3>O Ciclo da Água: Etapas e Estados Físicos</h3>
+                <p>Esquema visual interativo com caixas de correspondência e perguntas guiadas por etapas para estudo do ciclo hidrológico.</p>
+                <div class="activity-footer">
+                    <span class="file-info"><i class="bi bi-file-earmark-pdf"></i> PDF • 4 págs</span>
+                    <a href="#" class="download-btn" onclick="alert('Aqui você poderá vincular o arquivo PDF da atividade!')">
+                        <i class="bi bi-download"></i> Baixar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 4: História e Geografia -->
+            <div class="activity-card" data-category="humanas">
+                <div class="activity-header">
+                    <span class="activity-tag">História e Geografia</span>
+                    <span class="activity-level">Ensino Fundamental II</span>
+                </div>
+                <h3>Paisagens e Modificações do Espaço</h3>
+                <p>Comparação guiada entre paisagens naturais e antrópicas através de fotografias com perguntas objetivas e direcionadas.</p>
+                <div class="activity-footer">
+                    <span class="file-info"><i class="bi bi-file-earmark-pdf"></i> PDF • 3 págs</span>
+                    <a href="#" class="download-btn" onclick="alert('Aqui você poderá vincular o arquivo PDF da atividade!')">
+                        <i class="bi bi-download"></i> Baixar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 5: Matemática -->
+            <div class="activity-card" data-category="matematica">
+                <div class="activity-header">
+                    <span class="activity-tag">Matemática</span>
+                    <span class="activity-level">Ensino Fundamental / Enriquecimento</span>
+                </div>
+                <h3>Geometria Plana: Reconhecimento de Formas</h3>
+                <p>Atividade lúdica para identificação e classificação de figuras geométricas planas em elementos do cotidiano.</p>
+                <div class="activity-footer">
+                    <span class="file-info"><i class="bi bi-file-earmark-pdf"></i> PDF • 2 págs</span>
+                    <a href="#" class="download-btn" onclick="alert('Aqui você poderá vincular o arquivo PDF da atividade!')">
+                        <i class="bi bi-download"></i> Baixar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 6: Português -->
+            <div class="activity-card" data-category="portugues">
+                <div class="activity-header">
+                    <span class="activity-tag">Língua Portuguesa</span>
+                    <span class="activity-level">Ensino Fundamental II</span>
+                </div>
+                <h3>Produção de Texto Guiada por Tópicos</h3>
+                <p>Roteiro estruturado com perguntas norteadoras para auxiliar na organização de ideias e na construção de parágrafos descritivos.</p>
+                <div class="activity-footer">
+                    <span class="file-info"><i class="bi bi-file-earmark-pdf"></i> PDF • 3 págs</span>
+                    <a href="#" class="download-btn" onclick="alert('Aqui você poderá vincular o arquivo PDF da atividade!')">
+                        <i class="bi bi-download"></i> Baixar
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Rodapé Padronizado Garantido -->
+    <footer class="rodape">
+        <a class="rodape-marca" href="../index.html">NEXO Edu</a>
+        <p>Núcleo de Atividades Adaptadas</p>
+        <p class="rodape-frase">
+            Recursos, estratégias e tecnologia para uma educação inclusiva.
+        </p>
+    </footer>
+
+    <!-- Script de Filtros por Categoria -->
+    <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.activity-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                cards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
