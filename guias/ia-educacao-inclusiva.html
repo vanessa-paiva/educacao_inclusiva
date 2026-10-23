@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Orientações para uso responsável da inteligência artificial na educação inclusiva.">
+    <title>IA na Educação Inclusiva | NEXO Edu</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="adaptacao-atividades.css">
+</head>
+<body>
+
+    <!-- Menu Superior idêntico e funcional -->
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="../index.html" class="brand" aria-label="NEXO Edu - Página inicial">
+                <span class="brand-icon"><i class="bi bi-book-half"></i></span>
+                <span class="brand-text">
+                    <span class="brand-name">NEXO <span class="brand-highlight">Edu</span></span>
+                    <span class="brand-subtitle">Núcleo de Atividades Adaptadas — do Básico ao Avançado</span>
+                </span>
+            </a>
+
+            <nav class="top-nav" aria-label="Menu principal">
+                <a href="../index.html" class="nav-link">Início</a>
+                <a href="../atividades_prontas/atividades.html" class="nav-link">Atividades prontas</a>
+                <a href="../adaptacao-ia/adaptar.html" class="nav-link">Adaptar com IA</a>
+                <a href="modelo-pei.html" class="nav-link">Modelos de PEI</a>
+                <a href="guias.html" class="nav-link active">Guias para professores</a>
+                <a href="../sobre.html" class="nav-link">Sobre</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Título e Subtítulo padronizados com o estilo da página inicial -->
+        <section class="welcome-box">
+            <a href="guias.html" class="voltar" style="display: inline-block; margin-bottom: 15px; color: var(--teal); text-decoration: none; font-weight: 600;">← Voltar para os guias</a>
+
+            <span class="badge">
+                <i class="bi bi-heart-fill"></i>
+                Guia para Professores
+            </span>
+
+            <h1 class="welcome-title">Inteligência artificial na educação inclusiva</h1>
+
+            <p class="tagline">
+                “Aprenda a utilizar ferramentas de IA para apoiar a criação e adaptação de materiais, mantendo o professor no centro das decisões pedagógicas.”
+            </p>
+
+            <div class="informacoes-guia" style="display: flex; gap: 15px; font-size: 0.9rem; color: var(--muted); margin-top: 15px;">
+                <span>💻 Tecnologia educacional</span>
+                <span>⏱️ Leitura aproximada: 7 minutos</span>
+            </div>
+        </section>
+
+        <div class="layout-guia">
+            <aside class="indice">
+                <h2>Neste guia</h2>
+                <a href="#possibilidades">O que a IA pode fazer?</a>
+                <a href="#comandos">Como escrever comandos</a>
+                <a href="#exemplo">Exemplo de comando</a>
+                <a href="#revisao">Revise os resultados</a>
+                <a href="#privacidade">Privacidade e segurança</a>
+                <a href="#limites">Limites da IA</a>
+            </aside>
+            <article class="conteudo-guia">
+                <section id="possibilidades" class="bloco-guia">
+                    <h2>1. O que a IA pode fazer pelo professor?</h2>
+                    <p>Ferramentas de inteligência artificial podem ajudar a organizar ideias, gerar versões iniciais de atividades, propor exemplos, simplificar instruções e sugerir diferentes formas de apresentar um conteúdo.</p>
+                    <div class="grade-estrategias">
+                        <div class="cartao-estrategia"><span>📝</span><h3>Reescrever enunciados</h3><p>Transformar instruções extensas em etapas mais claras.</p></div>
+                        <div class="cartao-estrategia"><span>🧩</span><h3>Criar variações</h3><p>Propor diferentes formatos de uma atividade sobre o mesmo conteúdo.</p></div>
+                        <div class="cartao-estrategia"><span>🎯</span><h3>Sugerir objetivos</h3><p>Oferecer ideias de objetivos observáveis para revisão do professor.</p></div>
+                        <div class="cartao-estrategia"><span>📚</span><h3>Organizar materiais</h3><p>Estruturar perguntas, exemplos, glossários e sequências de atividades.</p></div>
+                    </div>
+                </section>
+
+                <section id="comandos" class="bloco-guia">
+                    <h2>2. Como escrever um bom comando</h2>
+                    <p>O comando, também chamado de prompt, é a instrução que você fornece à ferramenta. Quanto mais clara for a tarefa, melhor será a possibilidade de obter uma resposta útil.</p>
+                    <ul>
+                        <li><b>Contexto:</b> informe a disciplina, o ano escolar e o tema.</li>
+                        <li><b>Objetivo:</b> explique o que o estudante deve aprender.</li>
+                        <li><b>Necessidade pedagógica:</b> descreva as barreiras observadas e os apoios necessários, sem identificar o estudante.</li>
+                        <li><b>Formato:</b> indique se deseja perguntas, imagens sugeridas, texto curto ou atividade por etapas.</li>
+                        <li><b>Critérios:</b> diga o que deve ser preservado e como a atividade será avaliada.</li>
+                    </ul>
+                </section>
+
+                <section id="exemplo" class="bloco-guia">
+                    <h2>3. Exemplo de comando para adaptar uma atividade</h2>
+                    <p>Você pode usar o exemplo abaixo como ponto de partida e ajustar as informações ao seu planejamento.</p>
+                    <div class="caixa-destaque">
+                        <strong>Exemplo de prompt</strong>
+                        <p>“Atue como assistente de planejamento pedagógico. Crie uma versão acessível da atividade de Ciências sobre o sistema digestório para uma turma do 8º ano. O objetivo é identificar os principais órgãos e compreender suas funções. O estudante se beneficia de instruções curtas, apoio visual e tarefas divididas em etapas. Proponha uma atividade com linguagem adequada à idade, cinco questões variadas e sugestões de recursos visuais. Informe o objetivo de cada questão e inclua um gabarito. Não invente informações sobre o estudante. Apresente a proposta para revisão do professor.”</p>
+                    </div>
+                    <p>Se houver um material original, confira se você tem autorização para utilizá-lo na ferramenta escolhida e se não há dados pessoais ou informações restritas no arquivo.</p>
+                </section>
+
+                <section id="revisao" class="bloco-guia">
+                    <h2>4. Revise sempre o resultado</h2>
+                    <p>A IA pode produzir erros, informações incompletas, questões inadequadas ou adaptações que não atendam à necessidade real do estudante. O material gerado é uma proposta inicial, não uma decisão pedagógica definitiva.</p>
+                    <div class="checklist">
+                        <label><input type="checkbox"><span>O conteúdo está correto e alinhado ao objetivo curricular?</span></label>
+                        <label><input type="checkbox"><span>A linguagem é adequada à idade do estudante?</span></label>
+                        <label><input type="checkbox"><span>As instruções e os recursos são acessíveis?</span></label>
+                        <label><input type="checkbox"><span>A atividade permite demonstrar a aprendizagem pretendida?</span></label>
+                        <label><input type="checkbox"><span>Revisei o gabarito, os exemplos e as informações apresentadas?</span></label>
+                    </div>
+                </section>
+
+                <section id="privacidade" class="bloco-guia">
+                    <h2>5. Privacidade e segurança dos estudantes</h2>
+                    <p>Informações sobre deficiência, diagnóstico e saúde podem ser dados pessoais sensíveis. Antes de usar uma ferramenta de IA, verifique as regras da escola ou da rede de ensino, os termos do serviço e as condições de proteção de dados.</p>
+                    <ul>
+                        <li>Não inclua nomes, fotos, endereços, documentos ou dados que identifiquem o estudante.</li>
+                        <li>Não envie laudos, relatórios clínicos ou prontuários a ferramentas não autorizadas.</li>
+                        <li>Descreva as necessidades em termos pedagógicos, como “precisa de instruções por etapas”.</li>
+                        <li>Utilize apenas materiais que possa compartilhar legitimamente.</li>
+                        <li>Evite armazenar informações pessoais desnecessárias.</li>
+                    </ul>
+                    <div class="caixa-destaque"><strong>Exemplo mais seguro</strong><p>Em vez de inserir o nome e o diagnóstico de uma criança, descreva apenas o apoio necessário para a atividade, sem dados identificadores, e verifique se o uso da ferramenta é permitido pela instituição.</p></div>
+                </section>
+
+                <section id="limites" class="bloco-guia">
+                    <h2>6. O que a IA não substitui</h2>
+                    <p>A inteligência artificial não substitui o conhecimento do professor sobre a turma, a observação direta, a participação do estudante, o diálogo com a equipe escolar ou os procedimentos oficiais de planejamento.</p>
+                    <ul>
+                        <li>O professor verifica a adequação pedagógica.</li>
+                        <li>A equipe escolar participa das decisões conforme suas atribuições.</li>
+                        <li>As necessidades individuais devem ser avaliadas no contexto real.</li>
+                        <li>O conteúdo gerado deve ser conferido antes de ser aplicado.</li>
+                    </ul>
+                </section>
+
+                <section class="proximo-passo">
+                    <h2>Use a tecnologia com propósito</h2>
+                    <p>A IA pode economizar tempo na preparação de materiais, desde que os resultados sejam revisados e a privacidade dos estudantes seja respeitada.</p>
+                    <a href="guias.html" class="botao-voltar">Voltar para todos os guias</a>
+                </section>
+                <p class="nota-editorial">Material de orientação pedagógica. Siga as regras institucionais de privacidade, segurança da informação e uso de ferramentas digitais.</p>
+            </article>
+        </div>
+    </main>
+
+    <!-- Rodapé padronizado -->
+    <footer class="rodape">
+        <a class="rodape-marca" href="../index.html">NEXO Edu</a>
+        <p>Núcleo de Atividades Adaptadas</p>
+        <p class="rodape-frase">
+            Recursos, estratégias e tecnologia para uma educação inclusiva.
+        </p>
+    </footer>
+
+</body>
+</html>

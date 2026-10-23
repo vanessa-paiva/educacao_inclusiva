@@ -1,0 +1,233 @@
+/* ========================================
+   NEXO Edu - Guias para Professores
+   ======================================== */
+
+.apresentacao {
+    text-align: center;
+    max-width: 750px;
+    margin: 40px auto 50px;
+}
+
+.etiqueta {
+    display: inline-block;
+    background: #e2ecf5;
+    color: var(--azul-escuro, #24476d);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+}
+
+.apresentacao h1 {
+    font-size: clamp(2rem, 4vw, 2.7rem);
+    color: var(--azul-escuro, #24476d);
+    margin-bottom: 14px;
+    line-height: 1.2;
+}
+
+.apresentacao p {
+    color: var(--texto-suave, #64748b);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.busca {
+    max-width: 550px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.busca label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--texto, #263548);
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.busca input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid var(--border, #dfe7eb);
+    border-radius: 12px;
+    font-size: 0.95rem;
+    background: #ffffff;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.busca input:focus {
+    border-color: var(--teal, #477d76);
+    box-shadow: 0 0 0 3px rgba(71, 125, 118, 0.12);
+}
+
+.secao-guias {
+    margin-top: 32px;
+}
+
+.titulo-secao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.titulo-secao h2 {
+    color: var(--navy, #173b50);
+    font-size: 1.5rem;
+}
+
+.titulo-secao p {
+    color: var(--muted, #687c85);
+    font-size: 0.92rem;
+}
+
+.contador {
+    font-weight: 700;
+    color: var(--teal, #477d76);
+    background: var(--mint, #e9f3ef);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+}
+
+.grade-guias {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.cartao-guia {
+    background: #ffffff;
+    border: 1px solid var(--border, #dfe7eb);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 4px 15px rgba(23, 59, 80, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cartao-guia:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(23, 59, 80, 0.08);
+}
+
+.icone-guia {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-bottom: 14px;
+}
+
+.icone-azul { background: #e8f1f5; color: #315f91; }
+.icone-verde { background: #e7f5ed; color: #2e7d32; }
+.icone-roxo { background: #f0eafe; color: #6b46c1; }
+.icone-laranja { background: #fff0df; color: #dd6b20; }
+.icone-rosa { background: #fceaf1; color: #d53f8c; }
+.icone-amarelo { background: #fff6d9; color: #b7791f; }
+
+.categoria {
+    font-size: 0.72rem;
+    font-weight: 750;
+    color: var(--teal, #477d76);
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.cartao-guia h3 {
+    color: var(--navy, #173b50);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.cartao-guia p {
+    color: var(--muted, #687c85);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    flex-grow: 1;
+}
+
+.link-guia {
+    color: var(--teal, #477d76);
+    text-decoration: none;
+    font-weight: 650;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.link-guia:hover {
+    color: var(--navy, #173b50);
+}
+
+.mensagem-vazia {
+    text-align: center;
+    padding: 40px;
+    color: var(--muted, #687c85);
+}
+
+.aviso-inclusao {
+    margin-top: 40px;
+    background: #edf4fb;
+    border: 1px solid #d0e1f2;
+    border-radius: 16px;
+    padding: 28px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.aviso-icone {
+    font-size: 1.5rem;
+    color: var(--teal, #477d76);
+    background: #ffffff;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.aviso-inclusao h2 {
+    color: var(--navy, #173b50);
+    font-size: 1.15rem;
+    margin-bottom: 4px;
+}
+
+.aviso-inclusao p {
+    color: var(--muted, #687c85);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    .grade-guias {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .grade-guias {
+        grid-template-columns: 1fr;
+    }
+
+    .aviso-inclusao {
+        flex-direction: column;
+        text-align: center;
+    }
+}

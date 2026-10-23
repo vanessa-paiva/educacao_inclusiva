@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173B50">
   <title>Sobre o Projeto - NEXO Edu</title>
 
   <!-- Bootstrap Icons -->
@@ -13,17 +14,37 @@
 </head>
 <body>
 
-  <main class="container page-content">
-    
-    <!-- Link para voltar -->
-    <a href="index.html" class="back-link">
-      <i class="bi bi-arrow-left"></i> Voltar ao menu principal
-    </a>
+  <!-- Menu Superior Padronizado e Funcional -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand" aria-label="NEXO Edu - Página inicial">
+        <span class="brand-icon"><i class="bi bi-book-half"></i></span>
+        <span class="brand-text">
+          <span class="brand-name">NEXO <span class="brand-highlight">Edu</span></span>
+          <span class="brand-subtitle">Núcleo de Atividades Adaptadas — do Básico ao Avançado</span>
+        </span>
+      </a>
 
-    <!-- Artigo Sobre -->
-    <article class="about-card">
+      <nav class="top-nav" aria-label="Menu principal">
+        <a href="index.html" class="nav-link">Início</a>
+        <a href="atividades_prontas/atividades.html" class="nav-link">Atividades prontas</a>
+        <a href="adaptacao-ia/adaptar.html" class="nav-link">Adaptar com IA</a>
+        <a href="guias/modelo-pei.html" class="nav-link">Modelos de PEI</a>
+        <a href="guias/guias.html" class="nav-link">Guias para professores</a>
+        <a href="sobre.html" class="nav-link active">Sobre</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-content">
+
+    <!-- Artigo Sobre com mais respiro -->
+    <article class="about-card about-card-spacious">
       <header class="about-header">
-        <span class="badge">Sobre o Projeto</span>
+        <span class="badge">
+          <i class="bi bi-heart-fill"></i>
+          Sobre o Projeto
+        </span>
         <h1>NEXO Edu</h1>
         <p class="subtitle">
           Núcleo de Atividades Adaptadas: do Básico ao Avançado 
@@ -35,72 +56,106 @@
       </header>
 
       <section class="about-body">
-        <h2>Nossa Origem</h2>
-        <p>
-          O <strong>NEXO Edu</strong> nasceu do encontro entre duas professoras da rede estadual de ensino de São Paulo, 
-          <strong>Ariane Cristina de Oliveira Lima</strong> e <strong>Vanessa Marciano de Paiva</strong>, que compartilham 
-          um propósito: buscar novas possibilidades para tornar a educação cada vez mais acessível, inclusiva e significativa.
-        </p>
-
-        <!-- Cartões das Fundadoras -->
-        <div class="team-grid">
-          <div class="team-member">
-            <i class="bi bi-code-slash member-icon"></i>
-            <div>
-              <h3>Vanessa Marciano de Paiva</h3>
-              <p>Formada em Tecnologia da Informação (T.I.) e professora da rede pública estadual.</p>
-            </div>
-          </div>
-
-          <div class="team-member">
-            <i class="bi bi-graph-up-arrow member-icon"></i>
-            <div>
-              <h3>Ariane Cristina de Oliveira Lima</h3>
-              <p>Graduanda em Ciência de Dados e professora da rede pública estadual.</p>
-            </div>
-          </div>
+        
+        <div class="content-block">
+          <h2>Nossa Origem</h2>
+          <p>
+            O <strong>NEXO Edu</strong> nasceu do encontro entre duas professoras da rede estadual de ensino de São Paulo, 
+            <strong>Ariane Cristina de Oliveira Lima</strong> e <strong>Vanessa Marciano de Paiva</strong>, que compartilham 
+            um propósito em comum: buscar novas possibilidades para tornar a educação cada vez mais acessível, inclusiva e significativa.
+          </p>
         </div>
 
-        <p>
-          Juntas, estamos iniciando nossa jornada no desenvolvimento tecnológico, unindo nossos conhecimentos, 
-          nossas experiências e nossa vontade de inovar. Embora estejamos nos aventurando na criação de soluções digitais, 
-          carregamos conosco uma experiência essencial: <em>o olhar de quem vive diariamente os desafios e as possibilidades da educação</em>.
-        </p>
+        <!-- Seção das Idealizadoras (Ariane Primeiro) -->
+        <div class="founders-section-title">
+          <h2>Quem Idealizou o Projeto</h2>
+          <p>Conheça as educadoras por trás do NEXO Edu</p>
+        </div>
 
-        <p>
-          Foi a partir dessa vivência que surgiu a ideia de criar o NEXO Edu. Acreditamos que a tecnologia pode ir além da inovação: 
-          ela pode se tornar uma ferramenta de apoio ao professor, de valorização das diferenças e de ampliação das oportunidades de aprendizagem.
-        </p>
+        <div class="founders-grid">
+          
+          <!-- Card Ariane -->
+          <div class="founder-profile-card">
+            <div class="founder-photo-box">
+              <i class="bi bi-person-fill"></i>
+              <!-- Quando tiverem a foto, basta apagar o ícone acima e colocar: -->
+              <!-- <img src="sua-foto-ariane.jpg" alt="Ariane Cristina de Oliveira Lima"> -->
+            </div>
+            <div class="founder-info">
+              <h3>Ariane Cristina de Oliveira Lima</h3>
+              <span class="founder-badge">Idealizadora</span>
+              <p class="founder-bio">
+                Professora da rede pública estadual e graduanda em <strong>Ciência de Dados</strong>. 
+                Acredita no poder da análise de informações e da inovação pedagógica para transformar os desafios reais da escola.
+              </p>
+            </div>
+          </div>
 
-        <h2>Objetivos e Público-Alvo</h2>
-        <p>
-          Nosso projeto tem como objetivo desenvolver e disponibilizar atividades adaptadas em diferentes níveis de complexidade, 
-          do básico ao avançado, respeitando as necessidades, as potencialidades e os diferentes ritmos de aprendizagem dos estudantes.
-        </p>
-        <p>
-          Buscamos contribuir especialmente com práticas pedagógicas voltadas a estudantes com:
-        </p>
+          <!-- Card Vanessa -->
+          <div class="founder-profile-card">
+            <div class="founder-photo-box">
+              <i class="bi bi-person-fill"></i>
+              <!-- Quando tiverem a foto, basta apagar o ícone acima e colocar: -->
+              <!-- <img src="sua-foto-vanessa.jpg" alt="Vanessa Marciano de Paiva"> -->
+            </div>
+            <div class="founder-info">
+              <h3>Vanessa Marciano de Paiva</h3>
+              <span class="founder-badge">Idealizadora</span>
+              <p class="founder-bio">
+                Professora da rede pública estadual e formada em <strong>Análise e Desenvolvimento de Sistemas</strong>. 
+                Une a vivência prática de sala de aula ao conhecimento técnico para estruturar soluções digitais acessíveis.
+              </p>
+            </div>
+          </div>
 
-        <ul class="tag-list">
-          <li><strong>TEA</strong> (Transtorno do Espectro Autista)</li>
-          <li><strong>SD</strong> (Síndrome de Down)</li>
-          <li><strong>AH/SD</strong> (Altas Habilidades / Superdotação)</li>
-          <li><strong>DI</strong> (Deficiência Intelectual)</li>
-          <li>Dificuldades de aprendizagem e recomposição básica</li>
-        </ul>
+        </div>
 
-        <h2>O Olhar Pedagógico</h2>
-        <p>
-          Acreditamos que cada estudante aprende de maneira singular e que as diferenças nos ritmos e nos níveis de aprendizagem 
-          não devem ser obstáculos para o desenvolvimento. Por isso, queremos oferecer recursos que auxiliem os professores a diversificar 
-          suas estratégias pedagógicas, fortalecer as aprendizagens essenciais e criar oportunidades para que todos os estudantes avancem a partir 
-          de seus conhecimentos e de suas possibilidades.
-        </p>
-        <p>
-          Mais do que criar um site, queremos construir um espaço de possibilidades, no qual a tecnologia esteja a serviço da educação, 
-          a inclusão seja uma prática cotidiana e cada estudante tenha a oportunidade de aprender, desenvolver suas habilidades e 
-          reconhecer seu próprio potencial.
-        </p>
+        <div class="content-block">
+          <p>
+            Juntas, estamos iniciando nossa jornada no desenvolvimento tecnológico, unindo nossos conhecimentos, 
+            nossas experiências e nossa vontade de inovar. Embora estejamos nos aventurando na criação de soluções digitais, 
+            carregamos conosco uma experiência essencial: <em>o olhar de quem vive diariamente os desafios e as possibilidades da educação</em>.
+          </p>
+
+          <p>
+            Foi a partir dessa vivência que surgiu a ideia de criar o NEXO Edu. Acreditamos que a tecnologia pode ir além da inovação: 
+            ela pode se tornar uma ferramenta de apoio ao professor, de valorização das diferenças e de ampliação das oportunidades de aprendizagem.
+          </p>
+        </div>
+
+        <div class="content-block">
+          <h2>Objetivos e Público-Alvo</h2>
+          <p>
+            Nosso projeto tem como objetivo desenvolver e disponibilizar atividades adaptadas em diferentes níveis de complexidade, 
+            do básico ao avançado, respeitando as necessidades, as potencialidades e os diferentes ritmos de aprendizagem dos estudantes.
+          </p>
+          <p>
+            Buscamos contribuir especialmente com práticas pedagógicas voltadas a estudantes com:
+          </p>
+
+          <ul class="tag-list">
+            <li><strong>TEA</strong> (Transtorno do Espectro Autista)</li>
+            <li><strong>SD</strong> (Síndrome de Down)</li>
+            <li><strong>AH/SD</strong> (Altas Habilidades / Superdotação)</li>
+            <li><strong>DI</strong> (Deficiência Intelectual)</li>
+            <li>Dificuldades de aprendizagem e recomposição básica</li>
+          </ul>
+        </div>
+
+        <div class="content-block">
+          <h2>O Olhar Pedagógico</h2>
+          <p>
+            Acreditamos que cada estudante aprende de maneira singular e que as diferenças nos ritmos e nos níveis de aprendizagem 
+            não devem ser obstáculos para o desenvolvimento. Por isso, queremos oferecer recursos que auxiliem os professores a diversificar 
+            suas estratégias pedagógicas, fortalecer as aprendizagens essenciais e criar oportunidades para que todos os estudantes avancem a partir 
+            de seus conhecimentos e de suas possibilidades.
+          </p>
+          <p>
+            Mais do que criar um site, queremos construir um espaço de possibilidades, no qual a tecnologia esteja a serviço da educação, 
+            a inclusão seja uma prática cotidiana e cada estudante tenha a oportunidade de aprender, desenvolver suas habilidades e 
+            reconhecer seu próprio potencial.
+          </p>
+        </div>
 
         <div class="manifesto-box">
           <p>
@@ -112,10 +167,20 @@
             <strong>NEXO Edu</strong>: conectando pessoas, adaptando possibilidades e construindo novos caminhos para a aprendizagem.
           </div>
         </div>
+
       </section>
     </article>
 
   </main>
+
+  <!-- Rodapé Padronizado -->
+  <footer class="rodape">
+    <a class="rodape-marca" href="index.html">NEXO Edu</a>
+    <p>Núcleo de Atividades Adaptadas</p>
+    <p class="rodape-frase">
+      Recursos, estratégias e tecnologia para uma educação inclusiva.
+    </p>
+  </footer>
 
 </body>
 </html>
