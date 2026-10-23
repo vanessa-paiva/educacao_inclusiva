@@ -8,7 +8,7 @@
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   
-  <!-- Folha de Estilos -->
+  <!-- Estilos -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,92 +19,10 @@
       <p>Adapte atividades escolares para atender às necessidades de cada estudante.</p>
     </header>
 
-    <!-- Caixa de Boas-Vindas do Início (Aparece ao clicar em Início) -->
-    <section id="inicio-container" class="welcome-box">
-      <button type="button" class="close-btn" id="fechar-inicio" title="Fechar visualização">
-        <i class="bi bi-x-lg"></i>
-      </button>
-
-      <span class="badge">Educação e Inclusão</span>
-      <h2 class="welcome-title">Bem-vindo ao NEXO Edu!</h2>
-      <p class="tagline">“Conectando educação, tecnologia e inclusão para transformar possibilidades em aprendizagem.”</p>
-
-      <div class="welcome-text">
-        <p>
-          O <strong>NEXO Edu</strong> é um projeto criado por duas professoras da rede estadual de ensino de São Paulo que acreditam no poder da educação e da tecnologia para transformar realidades.
-        </p>
-        <p>
-          Nossa proposta é desenvolver e reunir recursos pedagógicos que contribuam para uma aprendizagem mais acessível, inclusiva e significativa, respeitando as necessidades, os ritmos e as potencialidades de cada estudante.
-        </p>
-
-        <h3 class="section-title">Aprender é um caminho com diferentes possibilidades</h3>
-        <p>
-          Cada estudante possui características, habilidades e necessidades próprias. Por isso, acreditamos que as práticas pedagógicas precisam oferecer diferentes caminhos para que todos tenham oportunidades de aprender e avançar.
-        </p>
-        <p>
-          O NEXO Edu busca apoiar professores na construção de estratégias pedagógicas por meio de atividades adaptadas, recursos digitais e propostas que contemplem diferentes níveis de aprendizagem, do básico ao avançado.
-        </p>
-
-        <h3 class="section-title">Para quem desenvolvemos?</h3>
-        
-        <div class="features-grid">
-          <div class="feature-item">
-            <i class="bi bi-heart-pulse feature-icon"></i>
-            <h4>Inclusão e acessibilidade</h4>
-            <p>Recursos e propostas pedagógicas para apoiar o trabalho com estudantes com Transtorno do Espectro Autista (TEA), Síndrome de Down (SD) e Deficiência Intelectual (DI).</p>
-          </div>
-
-          <div class="feature-item">
-            <i class="bi bi-ladder feature-icon"></i>
-            <h4>Recomposição das aprendizagens</h4>
-            <p>Atividades organizadas em diferentes níveis de complexidade para estudantes que apresentam dificuldades de aprendizagem ou precisam fortalecer habilidades essenciais.</p>
-          </div>
-
-          <div class="feature-item">
-            <i class="bi bi-stars feature-icon"></i>
-            <h4>Desenvolvimento de potencialidades</h4>
-            <p>Propostas que estimulem a criatividade, a autonomia, o aprofundamento dos conhecimentos e o desenvolvimento de estudantes com Altas Habilidades/Superdotação (AH/SD).</p>
-          </div>
-
-          <div class="feature-item">
-            <i class="bi bi-journal-bookmark feature-icon"></i>
-            <h4>Apoio ao professor</h4>
-            <p>Materiais, orientações e ferramentas que auxiliem no planejamento, na adaptação de atividades e na construção de práticas pedagógicas mais inclusivas.</p>
-          </div>
-        </div>
-
-        <h3 class="section-title">Como funciona?</h3>
-        <p>
-          Explore os recursos disponíveis, identifique as necessidades de aprendizagem dos seus estudantes e encontre possibilidades para adaptar suas práticas pedagógicas.
-        </p>
-        <p>
-          Nosso objetivo é facilitar o trabalho docente e contribuir para que cada estudante encontre oportunidades de participação, desenvolvimento e aprendizagem.
-        </p>
-
-        <h3 class="section-title">Uma ideia que nasce da realidade da escola</h3>
-        <p>
-          Somos <strong>Ariane Cristina de Oliveira Lima</strong> e <strong>Vanessa Marciano de Paiva</strong>, professoras da rede estadual de São Paulo e idealizadoras do NEXO Edu.
-        </p>
-        <p>
-          Unimos nossa vivência na educação ao interesse pela tecnologia para buscar soluções que respondam a desafios reais da sala de aula. Vanessa é formada em Tecnologia da Informação, e Ariane é estudante de Ciência de Dados.
-        </p>
-        <p>
-          Estamos construindo este projeto com disposição para aprender, experimentar e desenvolver ferramentas que aproximem ainda mais a tecnologia das necessidades educacionais.
-        </p>
-        <p>
-          Acreditamos que a inovação não precisa começar com grandes estruturas, mas com boas ideias, colaboração e o compromisso de fazer a diferença.
-        </p>
-
-        <div class="manifesto-pill">
-          <strong>NEXO Edu:</strong> diferentes caminhos, novas possibilidades e mais oportunidades para aprender.
-        </div>
-      </div>
-    </section>
-
-    <!-- Grade do Menu Principal -->
+    <!-- Grade dos Cards do Menu -->
     <nav class="menu-grid">
-      <!-- Item 1: Início (Com evento de clique) -->
-      <a href="#inicio-container" class="menu-card" id="btn-inicio">
+      <!-- Item 1: Início (Leva para a página inicio.html) -->
+      <a href="inicio.html" class="menu-card">
         <div class="icon-wrapper">
           <i class="bi bi-house"></i>
         </div>
@@ -170,26 +88,6 @@
       </a>
     </nav>
   </main>
-
-  <!-- Script para abrir/fechar o texto ao clicar no botão Início -->
-  <script>
-    const btnInicio = document.getElementById('btn-inicio');
-    const boxInicio = document.getElementById('inicio-container');
-    const btnFechar = document.getElementById('fechar-inicio');
-
-    btnInicio.addEventListener('click', (e) => {
-      e.preventDefault();
-      // Alterna visibilidade da caixa
-      boxInicio.classList.toggle('active');
-      if (boxInicio.classList.contains('active')) {
-        boxInicio.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-
-    btnFechar.addEventListener('click', () => {
-      boxInicio.classList.remove('active');
-    });
-  </script>
 
 </body>
 </html>

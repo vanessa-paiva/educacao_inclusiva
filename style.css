@@ -1,4 +1,4 @@
-/* Reset básico e tipografia */
+/* Reset Básico */
 * {
   margin: 0;
   padding: 0;
@@ -12,26 +12,31 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   padding: 40px 20px;
 }
 
 .container {
   width: 100%;
   max-width: 900px;
+  margin: 0 auto;
 }
 
-/* Cabeçalho */
+.page-content {
+  max-width: 800px;
+}
+
+/* Cabeçalho do Menu */
 .header {
   margin-bottom: 32px;
   text-align: center;
 }
 
 .header h1 {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 2.3rem;
+  font-weight: 800;
   color: #0f172a;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .header p {
@@ -39,48 +44,38 @@ body {
   color: #64748b;
 }
 
-/* Estrutura do Grid (2 colunas como na imagem) */
+/* Grade do Menu em 2 Colunas */
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  gap: 20px;
 }
 
-/* Estilo individual de cada card */
 .menu-card {
   display: flex;
   flex-direction: column;
   gap: 12px;
   background-color: #ffffff;
   padding: 24px;
-  border-radius: 12px;
+  border-radius: 14px;
   text-decoration: none;
   border: 1px solid #e2e8f0;
   transition: all 0.2s ease-in-out;
 }
 
-/* Efeito ao passar o mouse */
-a.menu-card:hover {
+.menu-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.05);
   border-color: #cbd5e1;
 }
 
-a.menu-card:focus-visible {
-  outline: 3px solid #2563eb;
-  outline-offset: 3px;
-}
-
-/* Ícones */
 .icon-wrapper {
-  font-size: 1.5rem;
-  color: #1e293b;
+  font-size: 1.6rem;
+  color: #2563eb;
   display: flex;
   align-items: center;
 }
 
-/* Títulos e textos dos cards */
-.card-content h2,
 .card-content h3 {
   font-size: 1.125rem;
   font-weight: 600;
@@ -94,32 +89,7 @@ a.menu-card:focus-visible {
   line-height: 1.5;
 }
 
-.availability {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 3px 9px;
-  border-radius: 999px;
-  background-color: #f1f5f9;
-  color: #475569;
-  font-size: 0.75rem;
-  font-weight: 600;
-}
-
-/* Responsividade: vira 1 coluna no celular */
-@media (max-width: 640px) {
-  .menu-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-}
-/* --- Caixa Centralizada do Sobre o Projeto --- */
-
-.page-content {
-  max-width: 760px;
-  margin: 0 auto;
-}
-
-/* Botão voltar centralizado */
+/* Botão de Retorno */
 .back-link {
   display: inline-flex;
   align-items: center;
@@ -128,7 +98,7 @@ a.menu-card:focus-visible {
   color: #2563eb;
   text-decoration: none;
   font-weight: 500;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   font-size: 0.95rem;
   width: 100%;
   text-align: center;
@@ -140,17 +110,16 @@ a.menu-card:focus-visible {
   text-decoration: underline;
 }
 
-/* Caixa principal com bordas suaves e sombra */
-.about-card {
+/* Caixa com Texto Centralizado (Usada em inicio.html e sobre.html) */
+.content-box {
   background-color: #ffffff;
   padding: 48px 36px;
   border-radius: 20px;
   border: 1px solid #e2e8f0;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
-  text-align: center; /* Centraliza todo o texto */
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  text-align: center;
 }
 
-/* Selo de identificação */
 .badge {
   display: inline-block;
   background-color: #eff6ff;
@@ -159,148 +128,99 @@ a.menu-card:focus-visible {
   border-radius: 999px;
   font-size: 0.85rem;
   font-weight: 600;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
-.about-header h1 {
-  font-size: 2.3rem;
+.box-title {
+  font-size: 2.1rem;
   font-weight: 800;
   color: #0f172a;
   margin-bottom: 10px;
 }
 
-.about-header .subtitle {
+.tagline {
   font-size: 1.05rem;
-  color: #475569;
-  line-height: 1.5;
+  font-style: italic;
+  color: #2563eb;
   margin-bottom: 24px;
 }
 
-.about-header .subtitle span {
-  display: block;
-  font-size: 0.95rem;
-  color: #64748b;
-  margin-top: 4px;
+.box-body p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #334155;
+  margin-bottom: 16px;
 }
 
-/* Citação / Slogan em destaque */
-.lead-quote {
-  font-size: 1.05rem;
-  font-style: italic;
-  color: #1e293b;
-  margin: 24px auto 32px auto;
-  background-color: #f8fafc;
-  padding: 16px 20px;
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
-  display: inline-block;
-  max-width: 90%;
-}
-
-.about-body h2 {
+.subheading {
   font-size: 1.35rem;
   font-weight: 700;
   color: #0f172a;
-  margin: 36px 0 14px 0;
+  margin: 36px auto 16px auto;
   display: inline-block;
   border-bottom: 2px solid #e2e8f0;
   padding-bottom: 6px;
 }
 
-.about-body p {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #334155;
-  margin-bottom: 18px;
-  text-align: center;
-}
-
-/* Cartões das Fundadoras centralizados */
-.team-grid {
+/* Grid de Destaques */
+.features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 16px;
-  margin: 24px 0;
+  margin: 24px 0 32px 0;
 }
 
-.team-member {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 20px 16px;
+.feature-item {
   background-color: #f8fafc;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
+  padding: 20px 16px;
+  text-align: center;
 }
 
-.member-icon {
-  font-size: 1.75rem;
+.feature-icon {
+  font-size: 1.7rem;
   color: #2563eb;
   margin-bottom: 8px;
+  display: inline-block;
 }
 
-.team-member h3 {
-  font-size: 1rem;
+.feature-item h3 {
+  font-size: 1.025rem;
   font-weight: 700;
   color: #0f172a;
   margin-bottom: 6px;
 }
 
-.team-member p {
+.feature-item p {
   font-size: 0.875rem;
+  line-height: 1.45;
   color: #64748b;
   margin-bottom: 0;
-  line-height: 1.4;
 }
 
-/* Lista de Categorias / Tags Centralizada */
-.tag-list {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin: 18px 0 28px 0;
-  padding: 0;
-}
-
-.tag-list li {
-  background-color: #f1f5f9;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  color: #334155;
-  border: 1px solid #e2e8f0;
-}
-
-/* Caixa do Manifesto Final */
-.manifesto-box {
-  margin-top: 36px;
-  padding: 28px 24px;
-  background: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 100%);
+.manifesto-pill {
+  margin-top: 32px;
+  padding: 16px 20px;
+  background-color: #eff6ff;
   border: 1px solid #dbeafe;
-  border-radius: 14px;
-  text-align: center;
-}
-
-.manifesto-box p {
-  margin-bottom: 12px;
-  color: #1e293b;
-}
-
-.brand-tagline {
-  font-weight: 600;
+  border-radius: 12px;
   color: #1d4ed8;
   font-size: 0.95rem;
 }
 
-/* Ajustes para telas menores (celulares) */
+/* Responsividade Mobile */
 @media (max-width: 640px) {
-  .about-card {
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .content-box {
     padding: 28px 18px;
   }
-  .about-header h1 {
-    font-size: 1.8rem;
+
+  .box-title {
+    font-size: 1.7rem;
   }
 }
