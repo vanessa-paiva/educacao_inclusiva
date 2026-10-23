@@ -1,209 +1,510 @@
-/* Reset básico e tipografia */
+
+/* =========================================
+   NEXO EDU — ESTILO GERAL
+========================================= */
+
+:root {
+  --navy: #173b50;
+  --navy-dark: #102f40;
+  --teal: #477d76;
+  --mint: #e9f3ef;
+  --mint-light: #f3f8f5;
+  --background: #f7f9fb;
+  --white: #ffffff;
+  --text: #263b46;
+  --muted: #687c85;
+  --border: #dfe7eb;
+  --shadow: 0 8px 25px rgba(23, 59, 80, 0.06);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
 body {
-  background-color: #f8fafc;
-  color: #1e293b;
+  background: var(--background);
+  color: var(--text);
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
 }
 
-.container {
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+/* =========================================
+   MENU SUPERIOR
+========================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   width: 100%;
-  max-width: 900px;
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 3px 12px rgba(23, 59, 80, 0.035);
+  backdrop-filter: blur(12px);
 }
 
-/* Cabeçalho */
-.header {
-  margin-bottom: 32px;
-  text-align: center;
-}
-
-.header h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #0f172a;
-  margin-bottom: 8px;
-}
-
-.header p {
-  font-size: 1rem;
-  color: #64748b;
-}
-
-/* Estrutura do Grid (2 colunas como na imagem) */
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+.nav-container {
+  max-width: 1250px;
+  min-height: 76px;
+  margin: 0 auto;
+  padding: 12px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 24px;
 }
 
-/* Estilo individual de cada card */
-.menu-card {
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  text-decoration: none;
+  color: var(--navy);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.brand-icon {
+  width: 39px;
+  height: 39px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: var(--mint);
+  color: var(--teal);
+  font-size: 1.3rem;
+}
+
+.brand-highlight {
+  color: var(--teal);
+}
+
+
+/* Nome e subtítulo da marca */
+
+.brand {
+  gap: 12px;
+}
+
+.brand-text {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  background-color: #ffffff;
-  padding: 24px;
-  border-radius: 12px;
+  align-items: flex-start;
+  line-height: 1.2;
+}
+
+.brand-name {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.brand-subtitle {
+  display: block;
+  margin-top: 5px;
+  color: #687c85;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.4;
+}
+
+/* Ajuste para telas pequenas */
+
+@media (max-width: 640px) {
+  .brand-subtitle {
+    max-width: 245px;
+    font-size: 0.62rem;
+  }
+
+  .brand-name {
+    font-size: 1.25rem;
+  }
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.nav-link {
+  color: #4d626c;
   text-decoration: none;
-  border: 1px solid #e2e8f0;
-  transition: all 0.2s ease-in-out;
+  font-size: 0.85rem;
+  font-weight: 550;
+  padding: 9px 11px;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-/* Efeito ao passar o mouse */
-a.menu-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.05);
-  border-color: #cbd5e1;
+.nav-link:hover,
+.nav-link.active {
+  background: var(--mint-light);
+  color: var(--navy);
 }
 
-a.menu-card:focus-visible {
-  outline: 3px solid #2563eb;
+.nav-link:focus-visible,
+.brand:focus-visible {
+  outline: 3px solid #82b5aa;
   outline-offset: 3px;
 }
 
-/* Ícones */
-.icon-wrapper {
-  font-size: 1.5rem;
-  color: #1e293b;
-  display: flex;
-  align-items: center;
+/* =========================================
+   CONTEÚDO PRINCIPAL
+========================================= */
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 36px 24px 52px;
 }
 
-/* Títulos e textos dos cards */
-.card-content h2,
+/* =========================================
+   APRESENTAÇÃO
+========================================= */
+
+.welcome-box {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px 48px;
+  box-shadow: var(--shadow);
+  margin-bottom: 48px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--mint);
+  color: var(--navy);
+  padding: 7px 15px;
+  border-radius: 999px;
+  font-size: 0.83rem;
+  font-weight: 650;
+  margin-bottom: 18px;
+}
+
+.badge i {
+  color: var(--teal);
+}
+
+.welcome-title {
+  color: var(--navy);
+  font-size: clamp(2rem, 4vw, 2.65rem);
+  line-height: 1.2;
+  letter-spacing: -1px;
+  margin-bottom: 14px;
+}
+
+.tagline {
+  max-width: 760px;
+  color: var(--teal);
+  font-size: 1.12rem;
+  line-height: 1.7;
+  font-weight: 500;
+  margin-bottom: 28px;
+}
+
+.welcome-text {
+  color: #415760;
+  font-size: 0.98rem;
+  line-height: 1.85;
+}
+
+.welcome-text > p {
+  margin-bottom: 16px;
+}
+
+.welcome-text strong {
+  color: var(--navy);
+}
+
+.section-title {
+  color: var(--navy);
+  font-size: 1.42rem;
+  line-height: 1.4;
+  margin-top: 34px;
+  margin-bottom: 14px;
+  padding-left: 14px;
+  border-left: 4px solid #8bb8a8;
+}
+
+/* =========================================
+   QUATRO ÁREAS DE ATUAÇÃO
+========================================= */
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 22px 0 28px;
+}
+
+.feature-item {
+  background: var(--mint-light);
+  border: 1px solid #e0ebe5;
+  border-radius: 14px;
+  padding: 23px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(23, 59, 80, 0.05);
+}
+
+.feature-icon {
+  display: inline-flex;
+  color: var(--teal);
+  font-size: 1.55rem;
+  margin-bottom: 10px;
+}
+
+.feature-item h3 {
+  color: var(--navy);
+  font-size: 1.02rem;
+  line-height: 1.45;
+  margin-bottom: 8px;
+}
+
+.feature-item p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* =========================================
+   TÍTULO DOS RECURSOS
+========================================= */
+
+.resources-section {
+  margin-top: 8px;
+}
+
+.resources-heading {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--teal);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.75rem;
+  font-weight: 750;
+  margin-bottom: 8px;
+}
+
+.resources-heading h2 {
+  color: var(--navy);
+  font-size: 1.85rem;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.resources-heading p {
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+/* =========================================
+   CARDS DE NAVEGAÇÃO
+========================================= */
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 24px;
+}
+
+.menu-card {
+  position: relative;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 25px 26px;
+  padding-right: 46px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(23, 59, 80, 0.015);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-3px);
+  border-color: #b9d2c8;
+  box-shadow: 0 10px 24px rgba(23, 59, 80, 0.07);
+}
+
+.menu-card:focus-visible {
+  outline: 3px solid #82b5aa;
+  outline-offset: 3px;
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  color: var(--teal);
+  font-size: 1.55rem;
+  margin-bottom: 2px;
+}
+
 .card-content h3 {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: #0f172a;
-  margin-bottom: 6px;
+  color: var(--navy);
+  font-size: 1.08rem;
+  line-height: 1.4;
+  font-weight: 650;
+  margin-bottom: 5px;
 }
 
 .card-content p {
-  font-size: 0.925rem;
-  color: #64748b;
-  line-height: 1.5;
+  color: var(--muted);
+  font-size: 0.91rem;
+  line-height: 1.65;
 }
 
-.availability {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 3px 9px;
-  border-radius: 999px;
-  background-color: #f1f5f9;
-  color: #475569;
-  font-size: 0.75rem;
-  font-weight: 600;
+.card-arrow {
+  position: absolute;
+  top: 24px;
+  right: 23px;
+  color: #91aaa4;
+  font-size: 1rem;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
-/* Responsividade: vira 1 coluna no celular */
-@media (max-width: 640px) {
-  .menu-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
+.menu-card:hover .card-arrow {
+  color: var(--teal);
+  transform: translate(2px, -2px);
 }
-/* --- Caixa Centralizada do Sobre o Projeto --- */
+
+/* =========================================
+   RODAPÉ
+========================================= */
+
+.site-footer {
+  text-align: center;
+  padding: 25px 20px;
+  border-top: 1px solid var(--border);
+  background: #ffffff;
+}
+
+.site-footer p {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* =========================================
+   PÁGINA SOBRE O PROJETO
+   Mantém classes usadas pelos estilos existentes
+========================================= */
 
 .page-content {
   max-width: 760px;
   margin: 0 auto;
 }
 
-/* Botão voltar centralizado */
 .back-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  color: #2563eb;
+  color: var(--teal);
   text-decoration: none;
   font-weight: 500;
   margin-bottom: 20px;
   font-size: 0.95rem;
-  width: 100%;
-  text-align: center;
-  transition: color 0.2s ease;
 }
 
 .back-link:hover {
-  color: #1d4ed8;
+  color: var(--navy);
   text-decoration: underline;
 }
 
-/* Caixa principal com bordas suaves e sombra */
 .about-card {
-  background-color: #ffffff;
+  background: var(--white);
   padding: 48px 36px;
   border-radius: 20px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
-  text-align: center; /* Centraliza todo o texto */
-}
-
-/* Selo de identificação */
-.badge {
-  display: inline-block;
-  background-color: #eff6ff;
-  color: #2563eb;
-  padding: 6px 16px;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 16px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  text-align: center;
 }
 
 .about-header h1 {
   font-size: 2.3rem;
   font-weight: 800;
-  color: #0f172a;
+  color: var(--navy);
   margin-bottom: 10px;
 }
 
 .about-header .subtitle {
   font-size: 1.05rem;
   color: #475569;
-  line-height: 1.5;
+  line-height: 1.7;
   margin-bottom: 24px;
 }
 
 .about-header .subtitle span {
   display: block;
   font-size: 0.95rem;
-  color: #64748b;
+  color: var(--muted);
   margin-top: 4px;
 }
 
-/* Citação / Slogan em destaque */
 .lead-quote {
   font-size: 1.05rem;
   font-style: italic;
-  color: #1e293b;
-  margin: 24px auto 32px auto;
-  background-color: #f8fafc;
+  color: var(--text);
+  margin: 24px auto 32px;
+  background: var(--mint-light);
   padding: 16px 20px;
   border-radius: 12px;
-  border: 1px solid #e2e8f0;
-  display: inline-block;
-  max-width: 90%;
+  border: 1px solid var(--border);
+  display: block;
+  max-width: 900px;
 }
 
 .about-body h2 {
   font-size: 1.35rem;
   font-weight: 700;
-  color: #0f172a;
-  margin: 36px 0 14px 0;
+  color: var(--navy);
+  margin: 36px 0 14px;
   display: inline-block;
-  border-bottom: 2px solid #e2e8f0;
+  border-bottom: 2px solid var(--border);
   padding-bottom: 6px;
 }
 
@@ -215,10 +516,9 @@ a.menu-card:focus-visible {
   text-align: center;
 }
 
-/* Cartões das Fundadoras centralizados */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 16px;
   margin: 24px 0;
 }
@@ -229,78 +529,189 @@ a.menu-card:focus-visible {
   align-items: center;
   text-align: center;
   padding: 20px 16px;
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
+  background: var(--mint-light);
+  border: 1px solid var(--border);
   border-radius: 12px;
 }
 
 .member-icon {
   font-size: 1.75rem;
-  color: #2563eb;
+  color: var(--teal);
   margin-bottom: 8px;
 }
 
 .team-member h3 {
   font-size: 1rem;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--navy);
   margin-bottom: 6px;
 }
 
 .team-member p {
   font-size: 0.875rem;
-  color: #64748b;
+  color: var(--muted);
   margin-bottom: 0;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
-/* Lista de Categorias / Tags Centralizada */
 .tag-list {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  margin: 18px 0 28px 0;
+  margin: 18px 0 28px;
   padding: 0;
 }
 
 .tag-list li {
-  background-color: #f1f5f9;
+  background: var(--mint-light);
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 0.9rem;
-  color: #334155;
-  border: 1px solid #e2e8f0;
+  color: var(--text);
+  border: 1px solid var(--border);
 }
 
-/* Caixa do Manifesto Final */
 .manifesto-box {
   margin-top: 36px;
   padding: 28px 24px;
-  background: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 100%);
-  border: 1px solid #dbeafe;
+  background: linear-gradient(135deg, #f0f8f3 0%, #eff5f8 100%);
+  border: 1px solid #dce9e4;
   border-radius: 14px;
   text-align: center;
 }
 
 .manifesto-box p {
   margin-bottom: 12px;
-  color: #1e293b;
+  color: var(--text);
 }
 
 .brand-tagline {
   font-weight: 600;
-  color: #1d4ed8;
+  color: var(--teal);
   font-size: 0.95rem;
 }
 
-/* Ajustes para telas menores (celulares) */
+/* =========================================
+   OUTRAS CLASSES QUE PODEM SER UTILIZADAS
+========================================= */
+
+.availability {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--mint);
+  color: var(--navy);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* =========================================
+   TABLETS E CELULARES
+========================================= */
+
+@media (max-width: 1000px) {
+  .nav-container {
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 20px;
+  }
+
+  .top-nav {
+    justify-content: center;
+  }
+
+  .nav-link {
+    font-size: 0.82rem;
+  }
+}
+
 @media (max-width: 640px) {
+  .container {
+    padding: 24px 15px 38px;
+  }
+
+  .nav-container {
+    padding: 12px 14px;
+  }
+
+  .top-nav {
+    gap: 4px;
+  }
+
+  .nav-link {
+    padding: 7px 9px;
+    font-size: 0.78rem;
+  }
+
+  .welcome-box {
+    padding: 28px 20px;
+    border-radius: 16px;
+    margin-bottom: 36px;
+  }
+
+  .welcome-title {
+    font-size: 1.9rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.22rem;
+    margin-top: 28px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .feature-item {
+    padding: 20px;
+  }
+
+  .resources-heading h2 {
+    font-size: 1.55rem;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .menu-card {
+    min-height: 145px;
+    padding: 22px;
+    padding-right: 45px;
+  }
+
   .about-card {
     padding: 28px 18px;
   }
+
   .about-header h1 {
     font-size: 1.8rem;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .manifesto-box {
+    padding: 22px 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }
