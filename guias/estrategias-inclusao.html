@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -6,149 +5,175 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Estratégias pedagógicas para favorecer a participação e a aprendizagem de todos os estudantes.">
     <title>Estratégias de Inclusão | NEXO Edu</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="adaptacao-atividades.css">
 </head>
 <body>
-<header class="cabecalho">
-    <a class="marca" href="../index.html">
-        <span class="marca-nome">NEXO <span>Edu</span></span>
-        <span class="marca-descricao">Núcleo de Atividades Adaptadas</span>
-    </a>
-    <nav class="menu" aria-label="Navegação principal">
-        <a href="../index.html">Início</a>
-        <a href="../atividades/atividades.html">Atividades prontas</a>
-        <a href="../adaptacao-ia/adaptar.html">Adaptar com IA</a>
-        <a href="guias.html" class="ativo">Guias para professores</a>
-    </nav>
-</header>
 
-<main>
-    <section class="hero-guia">
-        <a href="guias.html" class="voltar">← Voltar para os guias</a>
-        <span class="etiqueta">GUIA PARA PROFESSORES</span>
-        <h1>Estratégias de inclusão na sala de aula</h1>
-        <p>Práticas para favorecer a participação, a autonomia, a convivência e a aprendizagem de estudantes com diferentes necessidades.</p>
-        <div class="informacoes-guia">
-            <span>📚 Prática pedagógica</span>
-            <span>⏱️ Leitura aproximada: 7 minutos</span>
+    <!-- Menu Superior idêntico e funcional -->
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="../index.html" class="brand" aria-label="NEXO Edu - Página inicial">
+                <span class="brand-icon"><i class="bi bi-book-half"></i></span>
+                <span class="brand-text">
+                    <span class="brand-name">NEXO <span class="brand-highlight">Edu</span></span>
+                    <span class="brand-subtitle">Núcleo de Atividades Adaptadas — do Básico ao Avançado</span>
+                </span>
+            </a>
+
+            <nav class="top-nav" aria-label="Menu principal">
+                <a href="../index.html" class="nav-link">Início</a>
+                <a href="../atividades/atividades.html" class="nav-link">Atividades prontas</a>
+                <a href="../adaptacao-ia/adaptar.html" class="nav-link">Adaptar com IA</a>
+                <a href="modelo-pei.html" class="nav-link">Modelos de PEI</a>
+                <a href="guias.html" class="nav-link active">Guias para professores</a>
+                <a href="../sobre.html" class="nav-link">Sobre</a>
+            </nav>
         </div>
-    </section>
+    </header>
 
-    <div class="layout-guia">
-        <aside class="indice">
-            <h2>Neste guia</h2>
-            <a href="#principios">Princípios da inclusão</a>
-            <a href="#rotina">Rotina e previsibilidade</a>
-            <a href="#participacao">Participação nas aulas</a>
-            <a href="#autonomia">Autonomia</a>
-            <a href="#convivencia">Convivência</a>
-            <a href="#planejamento">Planejamento inclusivo</a>
-        </aside>
+    <main class="container">
+        <!-- Título e Subtítulo padronizados com o estilo da página inicial -->
+        <section class="welcome-box">
+            <a href="guias.html" class="voltar" style="display: inline-block; margin-bottom: 15px; color: var(--teal); text-decoration: none; font-weight: 600;">← Voltar para os guias</a>
 
-        <article class="conteudo-guia">
-            <section id="principios" class="bloco-guia">
-                <h2>1. Princípios da inclusão</h2>
-                <p>Uma sala de aula inclusiva busca garantir que todos os estudantes tenham oportunidades reais de participar, aprender e demonstrar seus conhecimentos.</p>
-                <p>Isso não significa ensinar todos exatamente da mesma maneira. O professor pode variar os recursos, as explicações e as formas de resposta, mantendo objetivos comuns quando forem adequados e estabelecendo objetivos individualizados quando necessário.</p>
-                <div class="caixa-destaque">
-                    <strong>Ideia principal</strong>
-                    <p>Em vez de perguntar apenas “o estudante consegue realizar esta atividade?”, investigue também “quais apoios podem ajudá-lo a participar?”.</p>
-                </div>
-            </section>
+            <span class="badge">
+                <i class="bi bi-heart-fill"></i>
+                Guia para Professores
+            </span>
 
-            <section id="rotina" class="bloco-guia">
-                <h2>2. Organize a rotina e antecipe as etapas</h2>
-                <p>Uma rotina compreensível pode ajudar os estudantes a entender o que acontecerá e o que se espera deles.</p>
-                <ul>
-                    <li>Apresente no quadro as etapas da aula.</li>
-                    <li>Explique o que será feito primeiro, depois e ao final.</li>
-                    <li>Avise com antecedência sobre mudanças sempre que possível.</li>
-                    <li>Use listas, imagens, palavras-chave ou um cronograma visual quando forem úteis.</li>
-                    <li>Deixe as instruções importantes visíveis durante a tarefa.</li>
-                </ul>
-                <div class="caixa-destaque">
-                    <strong>Exemplo</strong>
-                    <p>1. Retomar o conteúdo. 2. Observar um exemplo. 3. Realizar a atividade. 4. Conferir as respostas. 5. Compartilhar o que foi aprendido.</p>
-                </div>
-            </section>
+            <h1 class="welcome-title">Estratégias de inclusão na sala de aula</h1>
 
-            <section id="participacao" class="bloco-guia">
-                <h2>3. Amplie as formas de participação</h2>
-                <p>Nem todos os estudantes demonstram o que sabem da mesma forma. Quando o objetivo permitir, ofereça alternativas para participar e responder.</p>
-                <div class="grade-estrategias">
-                    <div class="cartao-estrategia">
-                        <span>🗣️</span>
-                        <h3>Resposta oral</h3>
-                        <p>Permita explicar uma ideia oralmente quando a escrita não for o objetivo avaliado.</p>
+            <p class="tagline">
+                “Práticas para favorecer a participação, a autonomia, a convivência e a aprendizagem de estudantes com diferentes necessidades.”
+            </p>
+
+            <div class="informacoes-guia" style="display: flex; gap: 15px; font-size: 0.9rem; color: var(--muted); margin-top: 15px;">
+                <span>📚 Prática pedagógica</span>
+                <span>⏱️ Leitura aproximada: 7 minutos</span>
+            </div>
+        </section>
+
+        <div class="layout-guia">
+            <aside class="indice">
+                <h2>Neste guia</h2>
+                <a href="#principios">Princípios da inclusão</a>
+                <a href="#rotina">Rotina e previsibilidade</a>
+                <a href="#participacao">Participação nas aulas</a>
+                <a href="#autonomia">Autonomia</a>
+                <a href="#convivencia">Convivência</a>
+                <a href="#planejamento">Planejamento inclusivo</a>
+            </aside>
+
+            <article class="conteudo-guia">
+                <section id="principios" class="bloco-guia">
+                    <h2>1. Princípios da inclusão</h2>
+                    <p>Uma sala de aula inclusiva busca garantir que todos os estudantes tenham oportunidades reais de participar, aprender e demonstrar seus conhecimentos.</p>
+                    <p>Isso não significa ensinar todos exatamente da mesma maneira. O professor pode variar os recursos, as explicações e as formas de resposta, mantendo objetivos comuns quando forem adequados e estabelecendo objetivos individualizados quando necessário.</p>
+                    <div class="caixa-destaque">
+                        <strong>Ideia principal</strong>
+                        <p>Em vez de perguntar apenas “o estudante consegue realizar esta atividade?”, investigue também “quais apoios podem ajudá-lo a participar?”.</p>
                     </div>
-                    <div class="cartao-estrategia">
-                        <span>🖼️</span>
-                        <h3>Imagens e esquemas</h3>
-                        <p>Use figuras, diagramas, mapas conceituais ou sequências visuais.</p>
+                </section>
+
+                <section id="rotina" class="bloco-guia">
+                    <h2>2. Organize a rotina e antecipe as etapas</h2>
+                    <p>Uma rotina compreensível pode ajudar os estudantes a entender o que acontecerá e o que se espera deles.</p>
+                    <ul>
+                        <li>Apresente no quadro as etapas da aula.</li>
+                        <li>Explique o que será feito primeiro, depois e ao final.</li>
+                        <li>Avise com antecedência sobre mudanças sempre que possível.</li>
+                        <li>Use listas, imagens, palavras-chave ou um cronograma visual quando forem úteis.</li>
+                        <li>Deixe as instruções importantes visíveis durante a tarefa.</li>
+                    </ul>
+                    <div class="caixa-destaque">
+                        <strong>Exemplo</strong>
+                        <p>1. Retomar o conteúdo. 2. Observar um exemplo. 3. Realizar a atividade. 4. Conferir as respostas. 5. Compartilhar o que foi aprendido.</p>
                     </div>
-                    <div class="cartao-estrategia">
-                        <span>🧩</span>
-                        <h3>Materiais concretos</h3>
-                        <p>Explore objetos, modelos e recursos manipuláveis relacionados ao conteúdo.</p>
+                </section>
+
+                <section id="participacao" class="bloco-guia">
+                    <h2>3. Amplie as formas de participação</h2>
+                    <p>Nem todos os estudantes demonstram o que sabem da mesma forma. Quando o objetivo permitir, ofereça alternativas para participar e responder.</p>
+                    <div class="grade-estrategias">
+                        <div class="cartao-estrategia">
+                            <span>🗣️</span>
+                            <h3>Resposta oral</h3>
+                            <p>Permita explicar uma ideia oralmente quando a escrita não for o objetivo avaliado.</p>
+                        </div>
+                        <div class="cartao-estrategia">
+                            <span>🖼️</span>
+                            <h3>Imagens e esquemas</h3>
+                            <p>Use figuras, diagramas, mapas conceituais ou sequências visuais.</p>
+                        </div>
+                        <div class="cartao-estrategia">
+                            <span>🧩</span>
+                            <h3>Materiais concretos</h3>
+                            <p>Explore objetos, modelos e recursos manipuláveis relacionados ao conteúdo.</p>
+                        </div>
+                        <div class="cartao-estrategia">
+                            <span>💻</span>
+                            <h3>Recursos digitais</h3>
+                            <p>Considere ferramentas acessíveis, leitores de tela e comunicação alternativa quando necessários.</p>
+                        </div>
                     </div>
-                    <div class="cartao-estrategia">
-                        <span>💻</span>
-                        <h3>Recursos digitais</h3>
-                        <p>Considere ferramentas acessíveis, leitores de tela e comunicação alternativa quando necessários.</p>
+                </section>
+
+                <section id="autonomia" class="bloco-guia">
+                    <h2>4. Desenvolva a autonomia</h2>
+                    <p>O apoio deve ajudar o estudante a participar e desenvolver habilidades, sem retirar desnecessariamente suas oportunidades de fazer escolhas e tentar realizar as tarefas.</p>
+                    <ul>
+                        <li>Divida tarefas extensas em etapas menores.</li>
+                        <li>Apresente exemplos antes de solicitar uma atividade nova.</li>
+                        <li>Ofereça tempo para que o estudante tente responder.</li>
+                        <li>Utilize pistas e orientações graduais, retirando-as quando já não forem necessárias.</li>
+                        <li>Valorize progressos concretos, estratégias utilizadas e tentativas.</li>
+                    </ul>
+                </section>
+
+                <section id="convivencia" class="bloco-guia">
+                    <h2>5. Promova respeito e convivência</h2>
+                    <p>O pertencimento à turma também faz parte da inclusão. Combine regras de respeito, intervenha diante de situações de exclusão e organize oportunidades de colaboração.</p>
+                    <ul>
+                        <li>Estabeleça combinados claros sobre respeito às diferenças.</li>
+                        <li>Organize atividades em duplas ou grupos com participação significativa de todos.</li>
+                        <li>Evite expor publicamente diagnósticos ou dificuldades individuais.</li>
+                        <li>Não transforme um estudante em representante de todas as pessoas com uma mesma deficiência.</li>
+                        <li>Escute o estudante e considere sua forma de comunicação e suas preferências.</li>
+                    </ul>
+                </section>
+
+                <section id="planejamento" class="bloco-guia">
+                    <h2>6. Planeje, observe e ajuste</h2>
+                    <p>Uma estratégia precisa ser acompanhada para saber se está ajudando. Registre observações pedagógicas objetivas e converse com a equipe escolar quando necessário.</p>
+                    <div class="checklist">
+                        <label><input type="checkbox"><span>Apresentei as instruções de forma compreensível.</span></label>
+                        <label><input type="checkbox"><span>Ofereci os recursos de acessibilidade necessários.</span></label>
+                        <label><input type="checkbox"><span>Planejei maneiras reais de participar da atividade.</span></label>
+                        <label><input type="checkbox"><span>Observei a resposta do estudante aos apoios.</span></label>
+                        <label><input type="checkbox"><span>Identifiquei o que precisa ser ajustado na próxima aula.</span></label>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section id="autonomia" class="bloco-guia">
-                <h2>4. Desenvolva a autonomia</h2>
-                <p>O apoio deve ajudar o estudante a participar e desenvolver habilidades, sem retirar desnecessariamente suas oportunidades de fazer escolhas e tentar realizar as tarefas.</p>
-                <ul>
-                    <li>Divida tarefas extensas em etapas menores.</li>
-                    <li>Apresente exemplos antes de solicitar uma atividade nova.</li>
-                    <li>Ofereça tempo para que o estudante tente responder.</li>
-                    <li>Utilize pistas e orientações graduais, retirando-as quando já não forem necessárias.</li>
-                    <li>Valorize progressos concretos, estratégias utilizadas e tentativas.</li>
-                </ul>
-            </section>
+                <section class="proximo-passo">
+                    <h2>Inclusão é um processo contínuo</h2>
+                    <p>As estratégias devem ser adaptadas ao contexto, às habilidades e às necessidades de cada estudante.</p>
+                    <a href="guias.html" class="botao-voltar">Voltar para todos os guias</a>
+                </section>
+                <p class="nota-editorial">Material de orientação pedagógica. As estratégias devem ser avaliadas conforme o contexto escolar e as necessidades individuais.</p>
+            </article>
+        </div>
+    </main>
 
-            <section id="convivencia" class="bloco-guia">
-                <h2>5. Promova respeito e convivência</h2>
-                <p>O pertencimento à turma também faz parte da inclusão. Combine regras de respeito, intervenha diante de situações de exclusão e organize oportunidades de colaboração.</p>
-                <ul>
-                    <li>Estabeleça combinados claros sobre respeito às diferenças.</li>
-                    <li>Organize atividades em duplas ou grupos com participação significativa de todos.</li>
-                    <li>Evite expor publicamente diagnósticos ou dificuldades individuais.</li>
-                    <li>Não transforme um estudante em representante de todas as pessoas com uma mesma deficiência.</li>
-                    <li>Escute o estudante e considere sua forma de comunicação e suas preferências.</li>
-                </ul>
-            </section>
+    <!-- Rodapé padronizado -->
+    <footer class="rodape">
+        <a class="rodape-marca" href="../index.html">NEXO Edu</a>
+        <p>Núcleo de Atividades Adaptadas</p>
+        <p class="rodape-frase">
+            Recursos, estratégias e tecnologia para uma educação inclusiva.
+        </p>
+    </footer>
 
-            <section id="planejamento" class="bloco-guia">
-                <h2>6. Planeje, observe e ajuste</h2>
-                <p>Uma estratégia precisa ser acompanhada para saber se está ajudando. Registre observações pedagógicas objetivas e converse com a equipe escolar quando necessário.</p>
-                <div class="checklist">
-                    <label><input type="checkbox"><span>Apresentei as instruções de forma compreensível.</span></label>
-                    <label><input type="checkbox"><span>Ofereci os recursos de acessibilidade necessários.</span></label>
-                    <label><input type="checkbox"><span>Planejei maneiras reais de participar da atividade.</span></label>
-                    <label><input type="checkbox"><span>Observei a resposta do estudante aos apoios.</span></label>
-                    <label><input type="checkbox"><span>Identifiquei o que precisa ser ajustado na próxima aula.</span></label>
-                </div>
-            </section>
-
-            <section class="proximo-passo">
-                <h2>Inclusão é um processo contínuo</h2>
-                <p>As estratégias devem ser adaptadas ao contexto, às habilidades e às necessidades de cada estudante.</p>
-                <a href="guias.html" class="botao-voltar">Voltar para todos os guias</a>
-            </section>
-            <p class="nota-editorial">Material de orientação pedagógica. As estratégias devem ser avaliadas conforme o contexto escolar e as necessidades individuais.</p>
-        </article>
-    </div>
-</main>
-
-<footer class="rodape">
-    <a class="rodape-marca" href="../index.html">NEXO Edu</a>
-    <p>Núcleo de Atividades Adaptadas</p>
-    <p>Recursos, estratégias e tecnologia para uma educação inclusiva.</p>
-</footer>
 </body>
 </html>

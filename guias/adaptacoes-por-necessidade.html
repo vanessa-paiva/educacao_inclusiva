@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -6,134 +5,173 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Orientações pedagógicas para planejar recursos e adaptações conforme as necessidades individuais dos estudantes.">
     <title>Adaptações por Necessidade Educacional | NEXO Edu</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="adaptacao-atividades.css">
 </head>
 <body>
-<header class="cabecalho">
-    <a class="marca" href="../index.html"><span class="marca-nome">NEXO <span>Edu</span></span><span class="marca-descricao">Núcleo de Atividades Adaptadas</span></a>
-    <nav class="menu" aria-label="Navegação principal">
-        <a href="../index.html">Início</a>
-        <a href="../atividades/atividades.html">Atividades prontas</a>
-        <a href="../adaptacao-ia/adaptar.html">Adaptar com IA</a>
-        <a href="guias.html" class="ativo">Guias para professores</a>
-    </nav>
-</header>
-<main>
-<section class="hero-guia">
-    <a href="guias.html" class="voltar">← Voltar para os guias</a>
-    <span class="etiqueta">GUIA PARA PROFESSORES</span>
-    <h1>Adaptações por necessidade educacional</h1>
-    <p>Conheça possibilidades pedagógicas para reduzir barreiras e ampliar a participação dos estudantes, considerando as características de cada pessoa.</p>
-    <div class="informacoes-guia"><span>📚 Educação inclusiva</span><span>⏱️ Leitura aproximada: 9 minutos</span></div>
-</section>
-<div class="layout-guia">
-<aside class="indice">
-    <h2>Neste guia</h2>
-    <a href="#principios">Antes de adaptar</a>
-    <a href="#tea">TEA</a>
-    <a href="#di">Deficiência intelectual</a>
-    <a href="#sd">Síndrome de Down</a>
-    <a href="#ahsd">Altas habilidades</a>
-    <a href="#outras">Outras necessidades</a>
-    <a href="#acompanhamento">Como acompanhar</a>
-</aside>
-<article class="conteudo-guia">
-<section id="principios" class="bloco-guia">
-    <h2>1. Antes de escolher uma adaptação</h2>
-    <p>As categorias podem ajudar o professor a pesquisar estratégias, mas não descrevem integralmente como uma pessoa aprende. A adaptação deve partir das habilidades observadas, das barreiras encontradas, das preferências do estudante e do objetivo curricular.</p>
-    <div class="caixa-destaque"><strong>Importante</strong><p>Use as sugestões como possibilidades para avaliar, não como regras obrigatórias para todas as pessoas de uma mesma categoria.</p></div>
-</section>
 
-<section id="tea" class="bloco-guia">
-    <h2>2. Transtorno do Espectro Autista (TEA)</h2>
-    <p>Alguns estudantes podem se beneficiar de maior previsibilidade, instruções explícitas ou recursos visuais. As necessidades de comunicação, interação, sensorialidade e organização variam muito entre indivíduos.</p>
-    <h3>Possibilidades pedagógicas</h3>
-    <ul>
-        <li>Apresentar a sequência da aula e avisar sobre mudanças quando possível.</li>
-        <li>Dar instruções claras e verificar se foram compreendidas.</li>
-        <li>Oferecer recursos visuais ou comunicação alternativa quando necessários.</li>
-        <li>Considerar necessidades sensoriais e combinar formas adequadas de participação.</li>
-        <li>Respeitar formas individuais de comunicação e interação.</li>
-    </ul>
-    <p><b>Exemplo:</b> apresentar uma atividade em três etapas ilustradas, mantendo o conteúdo e ajustando o apoio de acordo com a resposta do estudante.</p>
-</section>
+    <!-- Menu Superior idêntico e funcional -->
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="../index.html" class="brand" aria-label="NEXO Edu - Página inicial">
+                <span class="brand-icon"><i class="bi bi-book-half"></i></span>
+                <span class="brand-text">
+                    <span class="brand-name">NEXO <span class="brand-highlight">Edu</span></span>
+                    <span class="brand-subtitle">Núcleo de Atividades Adaptadas — do Básico ao Avançado</span>
+                </span>
+            </a>
 
-<section id="di" class="bloco-guia">
-    <h2>3. Deficiência intelectual (DI)</h2>
-    <p>O planejamento pode precisar considerar o nível atual de compreensão, o ritmo de aprendizagem, as habilidades adaptativas e os apoios necessários em cada tarefa.</p>
-    <h3>Possibilidades pedagógicas</h3>
-    <ul>
-        <li>Dividir tarefas complexas em etapas menores.</li>
-        <li>Apresentar exemplos concretos antes de trabalhar conceitos abstratos.</li>
-        <li>Retomar conteúdos e oferecer oportunidades variadas de prática.</li>
-        <li>Usar linguagem direta sem infantilizar o estudante.</li>
-        <li>Planejar objetivos observáveis e acompanhar os progressos.</li>
-    </ul>
-    <p><b>Exemplo:</b> em uma atividade sobre dinheiro, utilizar cédulas didáticas e situações de compra antes de solicitar a resolução de problemas apenas escritos.</p>
-</section>
+            <nav class="top-nav" aria-label="Menu principal">
+                <a href="../index.html" class="nav-link">Início</a>
+                <a href="../atividades/atividades.html" class="nav-link">Atividades prontas</a>
+                <a href="../adaptacao-ia/adaptar.html" class="nav-link">Adaptar com IA</a>
+                <a href="modelo-pei.html" class="nav-link">Modelos de PEI</a>
+                <a href="guias.html" class="nav-link active">Guias para professores</a>
+                <a href="../sobre.html" class="nav-link">Sobre</a>
+            </nav>
+        </div>
+    </header>
 
-<section id="sd" class="bloco-guia">
-    <h2>4. Síndrome de Down (SD)</h2>
-    <p>A Síndrome de Down está associada a características genéticas, mas o perfil de aprendizagem e as necessidades educacionais variam entre estudantes. Não se deve presumir uma dificuldade específica sem observar a pessoa.</p>
-    <h3>Possibilidades pedagógicas</h3>
-    <ul>
-        <li>Verificar quais formatos de instrução e recursos favorecem a compreensão.</li>
-        <li>Usar exemplos visuais e materiais concretos quando forem úteis.</li>
-        <li>Oferecer tempo e oportunidades de resposta adequados.</li>
-        <li>Considerar necessidades individuais de comunicação, leitura, escrita ou motricidade, quando observadas.</li>
-        <li>Promover participação com a turma e desenvolver autonomia.</li>
-    </ul>
-    <p><b>Exemplo:</b> apresentar instruções por etapas e permitir que o estudante demonstre a compreensão por um formato acessível, sem retirar o objetivo essencial da atividade quando ele for adequado.</p>
-</section>
+    <main class="container">
+        <!-- Título e Subtítulo padronizados com o estilo da página inicial -->
+        <section class="welcome-box">
+            <a href="guias.html" class="voltar" style="display: inline-block; margin-bottom: 15px; color: var(--teal); text-decoration: none; font-weight: 600;">← Voltar para os guias</a>
 
-<section id="ahsd" class="bloco-guia">
-    <h2>5. Altas habilidades/superdotação (AH/SD)</h2>
-    <p>Estudantes com altas habilidades/superdotação podem demonstrar habilidades avançadas em determinadas áreas. Também podem apresentar necessidades distintas entre áreas de conhecimento, interesses e formas de aprendizagem.</p>
-    <h3>Possibilidades pedagógicas</h3>
-    <ul>
-        <li>Oferecer problemas abertos e desafios de maior complexidade.</li>
-        <li>Propor projetos de investigação relacionados aos interesses do estudante.</li>
-        <li>Permitir aprofundamento e diferentes formas de apresentar resultados.</li>
-        <li>Evitar apenas aumentar a quantidade de exercícios repetitivos.</li>
-        <li>Planejar enriquecimento curricular conforme as necessidades observadas e as orientações da escola.</li>
-    </ul>
-    <p><b>Exemplo:</b> após compreender um conceito científico, o estudante pode investigar uma aplicação prática e apresentar suas conclusões em um projeto.</p>
-</section>
+            <span class="badge">
+                <i class="bi bi-heart-fill"></i>
+                Guia para Professores
+            </span>
 
-<section id="outras" class="bloco-guia">
-    <h2>6. Outras necessidades educacionais</h2>
-    <p>O NEXO Edu também poderá reunir orientações sobre outras barreiras à aprendizagem e à participação, incluindo necessidades relacionadas à leitura, escrita, atenção, comunicação, mobilidade, visão, audição e acesso aos materiais.</p>
-    <ul>
-        <li><b>Dislexia:</b> avaliar recursos de acesso à leitura e à escrita sem confundir a dificuldade com falta de conhecimento do conteúdo.</li>
-        <li><b>TDAH:</b> considerar instruções claras, organização das etapas e estratégias para acompanhar tarefas, conforme a necessidade observada.</li>
-        <li><b>Deficiência visual:</b> verificar acessibilidade dos materiais, contraste, descrição de imagens e tecnologias assistivas adequadas.</li>
-        <li><b>Deficiência auditiva:</b> considerar acesso visual às instruções, recursos de comunicação e apoios necessários.</li>
-        <li><b>Deficiência física ou mobilidade reduzida:</b> verificar acesso ao espaço, aos materiais e às formas de resposta.</li>
-    </ul>
-    <p>Essas sugestões não substituem a avaliação das barreiras reais, nem dispensam os recursos de acessibilidade e os apoios necessários.</p>
-</section>
+            <h1 class="welcome-title">Adaptações por necessidade educacional</h1>
 
-<section id="acompanhamento" class="bloco-guia">
-    <h2>7. Como saber se a adaptação funcionou?</h2>
-    <p>Observe se o estudante conseguiu acessar a proposta, participar e demonstrar a aprendizagem. Se o apoio não funcionar, investigue outras possibilidades em vez de concluir que o estudante não consegue aprender.</p>
-    <div class="checklist">
-        <label><input type="checkbox"><span>Identifiquei a barreira específica que precisava ser reduzida.</span></label>
-        <label><input type="checkbox"><span>Escolhi uma estratégia relacionada ao objetivo da atividade.</span></label>
-        <label><input type="checkbox"><span>Observei a resposta e o nível de apoio necessário.</span></label>
-        <label><input type="checkbox"><span>Considerei a opinião e as preferências do estudante, quando possível.</span></label>
-        <label><input type="checkbox"><span>Registrei o que funcionou e o que precisa ser ajustado.</span></label>
-    </div>
-</section>
+            <p class="tagline">
+                “Conheça possibilidades pedagógicas para reduzir barreiras e ampliar a participação dos estudantes, considerando as características de cada pessoa.”
+            </p>
 
-<section class="proximo-passo">
-    <h2>Adaptações com foco na pessoa</h2>
-    <p>Conhecer uma categoria é apenas o início. O planejamento deve responder às necessidades reais do estudante e ampliar sua participação.</p>
-    <a href="guias.html" class="botao-voltar">Voltar para todos os guias</a>
-</section>
-<p class="nota-editorial">Material de orientação pedagógica. As sugestões são gerais e precisam ser ajustadas ao contexto, às necessidades individuais e às orientações da equipe escolar.</p>
-</article>
-</div>
-</main>
-<footer class="rodape"><a class="rodape-marca" href="../index.html">NEXO Edu</a><p>Núcleo de Atividades Adaptadas</p><p>Recursos, estratégias e tecnologia para uma educação inclusiva.</p></footer>
+            <div class="informacoes-guia" style="display: flex; gap: 15px; font-size: 0.9rem; color: var(--muted); margin-top: 15px;">
+                <span>📚 Educação inclusiva</span>
+                <span>⏱️ Leitura aproximada: 9 minutos</span>
+            </div>
+        </section>
+
+        <div class="layout-guia">
+            <aside class="indice">
+                <h2>Neste guia</h2>
+                <a href="#principios">Antes de adaptar</a>
+                <a href="#tea">TEA</a>
+                <a href="#di">Deficiência intelectual</a>
+                <a href="#sd">Síndrome de Down</a>
+                <a href="#ahsd">Altas habilidades</a>
+                <a href="#outras">Outras necessidades</a>
+                <a href="#acompanhamento">Como acompanhar</a>
+            </aside>
+            <article class="conteudo-guia">
+                <section id="principios" class="bloco-guia">
+                    <h2>1. Antes de escolher uma adaptação</h2>
+                    <p>As categorias podem ajudar o professor a pesquisar estratégias, mas não descrevem integralmente como uma pessoa aprende. A adaptação deve partir das habilidades observadas, das barreiras encontradas, das preferências do estudante e do objetivo curricular.</p>
+                    <div class="caixa-destaque"><strong>Importante</strong><p>Use as sugestões como possibilidades para avaliar, não como regras obrigatórias para todas as pessoas de uma mesma categoria.</p></div>
+                </section>
+
+                <section id="tea" class="bloco-guia">
+                    <h2>2. Transtorno do Espectro Autista (TEA)</h2>
+                    <p>Alguns estudantes podem se beneficiar de maior previsibilidade, instruções explícitas ou recursos visuais. As necessidades de comunicação, interação, sensorialidade e organização variam muito entre indivíduos.</p>
+                    <h3>Possibilidades pedagógicas</h3>
+                    <ul>
+                        <li>Apresentar a sequência da aula e avisar sobre mudanças quando possível.</li>
+                        <li>Dar instruções claras e verificar se foram compreendidas.</li>
+                        <li>Oferecer recursos visuais ou comunicação alternativa quando necessários.</li>
+                        <li>Considerar necessidades sensoriais e combinar formas adequadas de participação.</li>
+                        <li>Respeitar formas individuais de comunicação e interação.</li>
+                    </ul>
+                    <p><b>Exemplo:</b> apresentar uma atividade em três etapas ilustradas, mantendo o conteúdo e ajustando o apoio de acordo com a resposta do estudante.</p>
+                </section>
+
+                <section id="di" class="bloco-guia">
+                    <h2>3. Deficiência intelectual (DI)</h2>
+                    <p>O planejamento pode precisar considerar o nível atual de compreensão, o ritmo de aprendizagem, as habilidades adaptativas e os apoios necessários em cada tarefa.</p>
+                    <h3>Possibilidades pedagógicas</h3>
+                    <ul>
+                        <li>Dividir tarefas complexas em etapas menores.</li>
+                        <li>Apresentar exemplos concretos antes de trabalhar conceitos abstratos.</li>
+                        <li>Retomar conteúdos e oferecer oportunidades variadas de prática.</li>
+                        <li>Usar linguagem direta sem infantilizar o estudante.</li>
+                        <li>Planejar objetivos observáveis e acompanhar os progressos.</li>
+                    </ul>
+                    <p><b>Exemplo:</b> em uma atividade sobre dinheiro, utilizar cédulas didáticas e situações de compra antes de solicitar a resolução de problemas apenas escritos.</p>
+                </section>
+
+                <section id="sd" class="bloco-guia">
+                    <h2>4. Síndrome de Down (SD)</h2>
+                    <p>A Síndrome de Down está associada a características genéticas, mas o perfil de aprendizagem e as necessidades educacionais variam entre estudantes. Não se deve presumir uma dificuldade específica sem observar a pessoa.</p>
+                    <h3>Possibilidades pedagógicas</h3>
+                    <ul>
+                        <li>Verificar quais formatos de instrução e recursos favorecem a compreensão.</li>
+                        <li>Usar exemplos visuais e materiais concretos quando forem úteis.</li>
+                        <li>Oferecer tempo e oportunidades de resposta adequados.</li>
+                        <li>Considerar necessidades individuais de comunicação, leitura, escrita ou motricidade, quando observadas.</li>
+                        <li>Promover participação com a turma e desenvolver autonomia.</li>
+                    </ul>
+                    <p><b>Exemplo:</b> apresentar instruções por etapas e permitir que o estudante demonstre a compreensão por um formato acessível, sem retirar o objetivo essencial da atividade quando ele for adequado.</p>
+                </section>
+
+                <section id="ahsd" class="bloco-guia">
+                    <h2>5. Altas habilidades/superdotação (AH/SD)</h2>
+                    <p>Estudantes com altas habilidades/superdotação podem demonstrar habilidades avançadas em determinadas áreas. Também podem apresentar necessidades distintas entre áreas de conhecimento, interesses e formas de aprendizagem.</p>
+                    <h3>Possibilidades pedagógicas</h3>
+                    <ul>
+                        <li>Oferecer problemas abertos e desafios de maior complexidade.</li>
+                        <li>Propor projetos de investigação relacionados aos interesses do estudante.</li>
+                        <li>Permitir aprofundamento e diferentes formas de apresentar resultados.</li>
+                        <li>Evitar apenas aumentar a quantidade de exercícios repetitivos.</li>
+                        <li>Planejar enriquecimento curricular conforme as necessidades observadas e as orientações da escola.</li>
+                    </ul>
+                    <p><b>Exemplo:</b> após compreender um conceito científico, o estudante pode investigar uma aplicação prática e apresentar suas conclusões em um projeto.</p>
+                </section>
+
+                <section id="outras" class="bloco-guia">
+                    <h2>6. Outras necessidades educacionais</h2>
+                    <p>O NEXO Edu também poderá reunir orientações sobre outras barreiras à aprendizagem e à participação, incluindo necessidades relacionadas à leitura, escrita, atenção, comunicação, mobilidade, visão, audição e acesso aos materiais.</p>
+                    <ul>
+                        <li><b>Dislexia:</b> avaliar recursos de acesso à leitura e à escrita sem confundir a dificuldade com falta de conhecimento do conteúdo.</li>
+                        <li><b>TDAH:</b> considerar instruções claras, organização das etapas e estratégias para acompanhar tarefas, conforme a necessidade observada.</li>
+                        <li><b>Deficiência visual:</b> verificar acessibilidade dos materiais, contraste, descrição de imagens e tecnologias assistivas adequadas.</li>
+                        <li><b>Deficiência auditiva:</b> considerar acesso visual às instruções, recursos de comunicação e apoios necessários.</li>
+                        <li><b>Deficiência física ou mobilidade reduzida:</b> verificar acesso ao espaço, aos materiais e às formas de resposta.</li>
+                    </ul>
+                    <p>Essas sugestões não substituem a avaliação das barreiras reais, nem dispensam os recursos de acessibilidade e os apoios necessários.</p>
+                </section>
+
+                <section id="acompanhamento" class="bloco-guia">
+                    <h2>7. Como saber se a adaptação funcionou?</h2>
+                    <p>Observe se o estudante conseguiu acessar a proposta, participar e demonstrar a aprendizagem. Se o apoio não funcionar, investigue outras possibilidades em vez de concluir que o estudante não consegue aprender.</p>
+                    <div class="checklist">
+                        <label><input type="checkbox"><span>Identifiquei a barreira específica que precisava ser reduzida.</span></label>
+                        <label><input type="checkbox"><span>Escolhi uma estratégia relacionada ao objetivo da atividade.</span></label>
+                        <label><input type="checkbox"><span>Observei a resposta e o nível de apoio necessário.</span></label>
+                        <label><input type="checkbox"><span>Considerei a opinião e as preferências do estudante, quando possível.</span></label>
+                        <label><input type="checkbox"><span>Registrei o que funcionou e o que precisa ser ajustado.</span></label>
+                    </div>
+                </section>
+
+                <section class="proximo-passo">
+                    <h2>Adaptações com foco na pessoa</h2>
+                    <p>Conhecer uma categoria é apenas o início. O planejamento deve responder às necessidades reais do estudante e ampliar sua participação.</p>
+                    <a href="guias.html" class="botao-voltar">Voltar para todos os guias</a>
+                </section>
+                <p class="nota-editorial">Material de orientação pedagógica. As sugestões são gerais e precisam ser ajustadas ao contexto, às necessidades individuais e às orientações da equipe escolar.</p>
+            </article>
+        </div>
+    </main>
+
+    <!-- Rodapé padronizado -->
+    <footer class="rodape">
+        <a class="rodape-marca" href="../index.html">NEXO Edu</a>
+        <p>Núcleo de Atividades Adaptadas</p>
+        <p class="rodape-frase">
+            Recursos, estratégias e tecnologia para uma educação inclusiva.
+        </p>
+    </footer>
+
 </body>
 </html>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -6,39 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Guia prático para professores sobre como adaptar atividades escolares para diferentes necessidades educacionais.">
     <title>Como Adaptar Atividades | NEXO Edu</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="adaptacao-atividades.css">
 </head>
 <body>
 
-    <header class="cabecalho">
-        <a class="marca" href="../index.html">
-            <span class="marca-nome">NEXO <span>Edu</span></span>
-            <span class="marca-descricao">Núcleo de Atividades Adaptadas</span>
-        </a>
+    <!-- Menu Superior idêntico e funcional -->
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="../index.html" class="brand" aria-label="NEXO Edu - Página inicial">
+                <span class="brand-icon"><i class="bi bi-book-half"></i></span>
+                <span class="brand-text">
+                    <span class="brand-name">NEXO <span class="brand-highlight">Edu</span></span>
+                    <span class="brand-subtitle">Núcleo de Atividades Adaptadas — do Básico ao Avançado</span>
+                </span>
+            </a>
 
-        <nav class="menu" aria-label="Navegação principal">
-            <a href="../index.html">Início</a>
-            <a href="../atividades/atividades.html">Atividades prontas</a>
-            <a href="../adaptacao-ia/adaptar.html">Adaptar com IA</a>
-            <a href="guias.html" class="ativo">Guias para professores</a>
-        </nav>
+            <nav class="top-nav" aria-label="Menu principal">
+                <a href="../index.html" class="nav-link">Início</a>
+                <a href="../atividades/atividades.html" class="nav-link">Atividades prontas</a>
+                <a href="../adaptacao-ia/adaptar.html" class="nav-link">Adaptar com IA</a>
+                <a href="modelo-pei.html" class="nav-link">Modelos de PEI</a>
+                <a href="guias.html" class="nav-link active">Guias para professores</a>
+                <a href="../sobre.html" class="nav-link">Sobre</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section class="hero-guia">
-            <a href="guias.html" class="voltar">← Voltar para os guias</a>
+    <main class="container">
+        <!-- Título e Subtítulo padronizados com o estilo da página inicial -->
+        <section class="welcome-box">
+            <a href="guias.html" class="voltar" style="display: inline-block; margin-bottom: 15px; color: var(--teal); text-decoration: none; font-weight: 600;">← Voltar para os guias</a>
 
-            <span class="etiqueta">GUIA PARA PROFESSORES</span>
+            <span class="badge">
+                <i class="bi bi-heart-fill"></i>
+                Guia para Professores
+            </span>
 
-            <h1>Como adaptar atividades escolares</h1>
+            <h1 class="welcome-title">Como adaptar atividades escolares</h1>
 
-            <p>
-                Um guia prático para planejar atividades mais acessíveis,
-                respeitando as habilidades, as necessidades e o ritmo de
-                aprendizagem de cada estudante.
+            <p class="tagline">
+                “Um guia prático para planejar atividades mais acessíveis, respeitando as habilidades, as necessidades e o ritmo de aprendizagem de cada estudante.”
             </p>
 
-            <div class="informacoes-guia">
+            <div class="informacoes-guia" style="display: flex; gap: 15px; font-size: 0.9rem; color: var(--muted); margin-top: 15px;">
                 <span>📚 Planejamento pedagógico</span>
                 <span>⏱️ Leitura aproximada: 8 minutos</span>
             </div>
@@ -408,10 +419,13 @@
         </div>
     </main>
 
+    <!-- Rodapé padronizado -->
     <footer class="rodape">
         <a class="rodape-marca" href="../index.html">NEXO Edu</a>
         <p>Núcleo de Atividades Adaptadas</p>
-        <p>Recursos, estratégias e tecnologia para uma educação inclusiva.</p>
+        <p class="rodape-frase">
+            Recursos, estratégias e tecnologia para uma educação inclusiva.
+        </p>
     </footer>
 
 </body>
