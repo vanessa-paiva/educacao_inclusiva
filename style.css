@@ -1,4 +1,3 @@
-
 /* =========================================
    NEXO EDU — ESTILO GERAL
 ========================================= */
@@ -74,7 +73,7 @@ button {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   flex-shrink: 0;
   text-decoration: none;
   color: var(--navy);
@@ -99,13 +98,6 @@ button {
   color: var(--teal);
 }
 
-
-/* Nome e subtítulo da marca */
-
-.brand {
-  gap: 12px;
-}
-
 .brand-text {
   display: flex;
   flex-direction: column;
@@ -128,8 +120,6 @@ button {
   letter-spacing: 0;
   line-height: 1.4;
 }
-
-/* Ajuste para telas pequenas */
 
 @media (max-width: 640px) {
   .brand-subtitle {
@@ -416,196 +406,30 @@ button {
    RODAPÉ
 ========================================= */
 
-.site-footer {
-  text-align: center;
-  padding: 25px 20px;
+.rodape {
+  padding: 32px 20px;
   border-top: 1px solid var(--border);
-  background: #ffffff;
-}
-
-.site-footer p {
-  color: var(--muted);
-  font-size: 0.85rem;
-}
-
-/* =========================================
-   PÁGINA SOBRE O PROJETO
-   Mantém classes usadas pelos estilos existentes
-========================================= */
-
-.page-content {
-  max-width: 760px;
-  margin: 0 auto;
-}
-
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  color: var(--teal);
-  text-decoration: none;
-  font-weight: 500;
-  margin-bottom: 20px;
-  font-size: 0.95rem;
-}
-
-.back-link:hover {
-  color: var(--navy);
-  text-decoration: underline;
-}
-
-.about-card {
   background: var(--white);
-  padding: 48px 36px;
-  border-radius: 20px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
   text-align: center;
 }
 
-.about-header h1 {
-  font-size: 2.3rem;
+.rodape-marca {
+  color: var(--navy);
+  font-size: 23px;
   font-weight: 800;
-  color: var(--navy);
-  margin-bottom: 10px;
-}
-
-.about-header .subtitle {
-  font-size: 1.05rem;
-  color: #475569;
-  line-height: 1.7;
-  margin-bottom: 24px;
-}
-
-.about-header .subtitle span {
-  display: block;
-  font-size: 0.95rem;
-  color: var(--muted);
-  margin-top: 4px;
-}
-
-.lead-quote {
-  font-size: 1.05rem;
-  font-style: italic;
-  color: var(--text);
-  margin: 24px auto 32px;
-  background: var(--mint-light);
-  padding: 16px 20px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  display: block;
-  max-width: 900px;
-}
-
-.about-body h2 {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--navy);
-  margin: 36px 0 14px;
+  text-decoration: none;
   display: inline-block;
-  border-bottom: 2px solid var(--border);
-  padding-bottom: 6px;
-}
-
-.about-body p {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #334155;
-  margin-bottom: 18px;
-  text-align: center;
-}
-
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-  margin: 24px 0;
-}
-
-.team-member {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 20px 16px;
-  background: var(--mint-light);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-}
-
-.member-icon {
-  font-size: 1.75rem;
-  color: var(--teal);
-  margin-bottom: 8px;
-}
-
-.team-member h3 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--navy);
   margin-bottom: 6px;
 }
 
-.team-member p {
-  font-size: 0.875rem;
+.rodape > p {
   color: var(--muted);
-  margin-bottom: 0;
-  line-height: 1.5;
+  font-size: 13px;
 }
 
-.tag-list {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin: 18px 0 28px;
-  padding: 0;
-}
-
-.tag-list li {
-  background: var(--mint-light);
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  color: var(--text);
-  border: 1px solid var(--border);
-}
-
-.manifesto-box {
-  margin-top: 36px;
-  padding: 28px 24px;
-  background: linear-gradient(135deg, #f0f8f3 0%, #eff5f8 100%);
-  border: 1px solid #dce9e4;
-  border-radius: 14px;
-  text-align: center;
-}
-
-.manifesto-box p {
-  margin-bottom: 12px;
-  color: var(--text);
-}
-
-.brand-tagline {
-  font-weight: 600;
-  color: var(--teal);
-  font-size: 0.95rem;
-}
-
-/* =========================================
-   OUTRAS CLASSES QUE PODEM SER UTILIZADAS
-========================================= */
-
-.availability {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 3px 9px;
-  border-radius: 999px;
-  background: var(--mint);
-  color: var(--navy);
-  font-size: 0.75rem;
-  font-weight: 600;
+.rodape .rodape-frase {
+  margin-top: 5px;
+  font-size: 12px;
 }
 
 /* =========================================
@@ -688,30 +512,5 @@ button {
     min-height: 145px;
     padding: 22px;
     padding-right: 45px;
-  }
-
-  .about-card {
-    padding: 28px 18px;
-  }
-
-  .about-header h1 {
-    font-size: 1.8rem;
-  }
-
-  .team-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .manifesto-box {
-    padding: 22px 16px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
   }
 }

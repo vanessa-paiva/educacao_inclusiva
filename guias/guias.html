@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -6,25 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Guias práticos para professores sobre atividades adaptadas e educação inclusiva.">
     <title>Guias para Professores | NEXO Edu</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="guias.css">
 </head>
 <body>
 
-    <header class="cabecalho">
-        <a class="marca" href="../index.html">
-            <span class="marca-nome">NEXO <span>Edu</span></span>
-            <span class="marca-descricao">Núcleo de Atividades Adaptadas</span>
-        </a>
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="../index.html" class="brand" aria-label="NEXO Edu - Página inicial">
+                <span class="brand-icon"><i class="bi bi-book-half"></i></span>
+                <span class="brand-text">
+                    <span class="brand-name">NEXO <span class="brand-highlight">Edu</span></span>
+                    <span class="brand-subtitle">Núcleo de Atividades Adaptadas — do Básico ao Avançado</span>
+                </span>
+            </a>
 
-        <nav class="menu" aria-label="Navegação principal">
-            <a href="../index.html">Início</a>
-            <a href="../atividades/atividades.html">Atividades prontas</a>
-            <a href="../adaptacao-ia/adaptar.html">Adaptar com IA</a>
-            <a href="guias.html" class="ativo">Guias para professores</a>
-        </nav>
+            <nav class="top-nav" aria-label="Menu principal">
+                <a href="../index.html" class="nav-link">Início</a>
+                <a href="../atividades/atividades.html" class="nav-link">Atividades prontas</a>
+                <a href="../adaptacao-ia/adaptar.html" class="nav-link">Adaptar com IA</a>
+                <a href="modelo-pei.html" class="nav-link">Modelos de PEI</a>
+                <a href="guias.html" class="nav-link active">Guias para professores</a>
+                <a href="../sobre.html" class="nav-link">Sobre</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
+    <main class="container">
         <section class="apresentacao">
             <span class="etiqueta">ÁREA DO PROFESSOR</span>
             <h1>Guias para uma educação mais inclusiva</h1>
@@ -172,31 +181,28 @@
         const mensagemVazia = document.getElementById("mensagemVazia");
 
         function filtrarGuias() {
-            const termo = campoBusca.value
-                .toLocaleLowerCase("pt-BR")
-                .trim();
-
+            const termo = campoBusca.value.toLowerCase().trim();
             let quantidadeVisivel = 0;
 
             cartoes.forEach((cartao) => {
-                const texto = (
-                    cartao.innerText + " " +
-                    cartao.dataset.termos
-                ).toLocaleLowerCase("pt-BR");
+                const titulo = cartao.querySelector("h3") ? cartao.querySelector("h3").innerText : "";
+                const descricao = cartao.querySelector("p") ? cartao.querySelector("p").innerText : "";
+                const categoria = cartao.querySelector(".categoria") ? cartao.querySelector(".categoria").innerText : "";
+                const termosExtras = cartao.dataset.termos || "";
 
-                const corresponde = texto.includes(termo);
+                const textoCompleto = (titulo + " " + descricao + " " + categoria + " " + termosExtras).toLowerCase();
 
-                cartao.hidden = !corresponde;
+                const corresponde = termo === "" || textoCompleto.includes(termo);
 
                 if (corresponde) {
+                    cartao.style.display = "flex";
                     quantidadeVisivel++;
+                } else {
+                    cartao.style.display = "none";
                 }
             });
 
-            contador.textContent =
-                quantidadeVisivel +
-                (quantidadeVisivel === 1 ? " guia" : " guias");
-
+            contador.textContent = quantidadeVisivel + (quantidadeVisivel === 1 ? " guia" : " guias");
             mensagemVazia.hidden = quantidadeVisivel !== 0;
         }
 
