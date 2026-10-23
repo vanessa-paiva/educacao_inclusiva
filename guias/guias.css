@@ -1,0 +1,480 @@
+
+/* ========================================
+   NEXO Edu - Guias para Professores
+   ======================================== */
+
+:root {
+    --azul: #315f91;
+    --azul-escuro: #24476d;
+    --azul-claro: #edf4fb;
+    --fundo: #f7f9fc;
+    --branco: #ffffff;
+    --texto: #263548;
+    --texto-suave: #64748b;
+    --borda: #e2e8f0;
+    --verde-claro: #e7f5ed;
+    --roxo-claro: #f0eafe;
+    --laranja-claro: #fff0df;
+    --rosa-claro: #fceaf1;
+    --amarelo-claro: #fff6d9;
+    --sombra: 0 8px 25px rgba(35, 63, 94, 0.07);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+/* Cabeçalho */
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 20px 7%;
+    background: var(--branco);
+    border-bottom: 1px solid var(--borda);
+}
+
+.marca {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.marca-nome {
+    color: var(--azul-escuro);
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+.marca-nome span {
+    color: #4c8bc7;
+}
+
+.marca-descricao {
+    color: var(--texto-suave);
+    font-size: 10px;
+    letter-spacing: 0.2px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+}
+
+.menu a {
+    color: #475569;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.menu a:hover,
+.menu a.ativo {
+    color: var(--azul);
+}
+
+.menu a.ativo {
+    font-weight: 700;
+}
+
+/* Apresentação */
+
+.apresentacao {
+    padding: 72px 20px 58px;
+    text-align: center;
+    background: linear-gradient(135deg, #edf4fb 0%, #f8fbff 65%, #edf7f5 100%);
+}
+
+.etiqueta {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 7px 13px;
+    border-radius: 30px;
+    background: #dceaf8;
+    color: var(--azul-escuro);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.apresentacao h1 {
+    max-width: 780px;
+    margin: 0 auto 18px;
+    color: var(--azul-escuro);
+    font-size: clamp(30px, 4vw, 43px);
+    line-height: 1.2;
+}
+
+.apresentacao > p {
+    max-width: 680px;
+    margin: 0 auto;
+    color: #53657a;
+    font-size: 16px;
+}
+
+/* Campo de busca */
+
+.busca {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 540px;
+    margin: 30px auto 0;
+    text-align: left;
+}
+
+.busca label {
+    color: var(--texto);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.busca input {
+    width: 100%;
+    padding: 15px 18px;
+    border: 1px solid #d5dfeb;
+    border-radius: 10px;
+    outline: none;
+    background: var(--branco);
+    color: var(--texto);
+    box-shadow: 0 4px 12px rgba(35, 63, 94, 0.04);
+}
+
+.busca input::placeholder {
+    color: #94a3b8;
+}
+
+.busca input:focus {
+    border-color: #6c9dcc;
+    box-shadow: 0 0 0 3px rgba(76, 139, 199, 0.15);
+}
+
+/* Seção dos guias */
+
+.secao-guias {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 56px 24px 40px;
+}
+
+.titulo-secao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.titulo-secao h2 {
+    margin-bottom: 5px;
+    color: var(--azul-escuro);
+    font-size: 27px;
+}
+
+.titulo-secao p {
+    color: var(--texto-suave);
+    font-size: 14px;
+}
+
+.contador {
+    padding: 7px 12px;
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+    background: var(--branco);
+    color: var(--texto-suave);
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+/* Cartões */
+
+.grade-guias {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.cartao-guia {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    padding: 27px;
+    border: 1px solid var(--borda);
+    border-radius: 15px;
+    background: var(--branco);
+    box-shadow: var(--sombra);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cartao-guia:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(35, 63, 94, 0.11);
+}
+
+.cartao-guia[hidden] {
+    display: none;
+}
+
+.icone-guia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 21px;
+    border-radius: 13px;
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.icone-azul {
+    background: var(--azul-claro);
+    color: #315f91;
+}
+
+.icone-verde {
+    background: var(--verde-claro);
+    color: #28784b;
+}
+
+.icone-roxo {
+    background: var(--roxo-claro);
+    color: #7552b8;
+}
+
+.icone-laranja {
+    background: var(--laranja-claro);
+    color: #b56a22;
+}
+
+.icone-rosa {
+    background: var(--rosa-claro);
+    color: #ad4770;
+}
+
+.icone-amarelo {
+    background: var(--amarelo-claro);
+    color: #9a7515;
+}
+
+.categoria {
+    margin-bottom: 9px;
+    color: var(--azul);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+}
+
+.cartao-guia h3 {
+    margin-bottom: 11px;
+    color: var(--texto);
+    font-size: 19px;
+    line-height: 1.35;
+}
+
+.cartao-guia p {
+    flex-grow: 1;
+    margin-bottom: 23px;
+    color: var(--texto-suave);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.link-guia {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--azul);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.link-guia span {
+    font-size: 19px;
+    transition: transform 0.2s;
+}
+
+.link-guia:hover {
+    color: var(--azul-escuro);
+}
+
+.link-guia:hover span {
+    transform: translateX(4px);
+}
+
+/* Busca sem resultados */
+
+.mensagem-vazia {
+    margin-top: 25px;
+    padding: 24px;
+    border: 1px dashed #cbd5e1;
+    border-radius: 12px;
+    color: var(--texto-suave);
+    text-align: center;
+}
+
+/* Aviso sobre inclusão */
+
+.aviso-inclusao {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    max-width: 1152px;
+    margin: 0 auto 65px;
+    padding: 27px;
+    border: 1px solid #d9e7f3;
+    border-radius: 15px;
+    background: #edf5fb;
+}
+
+.aviso-icone {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--branco);
+    color: var(--azul);
+    font-size: 23px;
+}
+
+.aviso-inclusao h2 {
+    margin-bottom: 7px;
+    color: var(--azul-escuro);
+    font-size: 18px;
+}
+
+.aviso-inclusao p {
+    color: #53657a;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Rodapé */
+
+.rodape {
+    padding: 32px 20px;
+    border-top: 1px solid var(--borda);
+    background: var(--branco);
+    text-align: center;
+}
+
+.rodape-marca {
+    color: var(--azul-escuro);
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.rodape > p {
+    color: var(--texto-suave);
+    font-size: 13px;
+}
+
+.rodape .rodape-frase {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+/* Responsividade */
+
+@media (max-width: 900px) {
+    .cabecalho {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 20px 5%;
+    }
+
+    .menu {
+        justify-content: flex-start;
+        gap: 12px 18px;
+    }
+
+    .grade-guias {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .aviso-inclusao {
+        margin-right: 24px;
+        margin-left: 24px;
+    }
+}
+
+@media (max-width: 580px) {
+    .apresentacao {
+        padding: 50px 20px 42px;
+    }
+
+    .apresentacao h1 {
+        font-size: 30px;
+    }
+
+    .apresentacao > p {
+        font-size: 14px;
+    }
+
+    .secao-guias {
+        padding: 40px 18px 30px;
+    }
+
+    .titulo-secao {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .titulo-secao h2 {
+        font-size: 24px;
+    }
+
+    .grade-guias {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .cartao-guia {
+        padding: 23px;
+    }
+
+    .aviso-inclusao {
+        gap: 12px;
+        margin: 0 18px 40px;
+        padding: 20px;
+    }
+
+    .aviso-icone {
+        width: 36px;
+        height: 36px;
+    }
+}
