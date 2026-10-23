@@ -21,7 +21,7 @@ O projeto nasceu do encontro de duas professoras da rede estadual de ensino de S
 
 <div align="center">
   <p><b>Ariane Cristina de Oliveira Lima</b><br>Graduanda em Ciência de Dados e Professora da Rede Pública Estadual</p>
-  <p><b>Vanessa Marciano de Paiva</b><br>Formada em Tecnologia da Informação (T.I.) e Professora da Rede Pública Estadual</p>
+  <p><b>Vanessa Marciano de Paiva</b><br>Formada em Análise e Desenvolvimento de Sistemas e Professora da Rede Pública Estadual</p>
 </div>
 
 ---
