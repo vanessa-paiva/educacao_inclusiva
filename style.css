@@ -1,4 +1,21 @@
-/* Reset básico e tipografia */
+/* =========================================
+   NEXO EDU — ESTILO GERAL E VARIÁVEIS
+========================================= */
+
+:root {
+  --navy: #173b50;
+  --navy-dark: #102f40;
+  --teal: #477d76;
+  --mint: #e9f3ef;
+  --mint-light: #f3f8f5;
+  --background: #f7f9fb;
+  --white: #ffffff;
+  --text: #263b46;
+  --muted: #687c85;
+  --border: #dfe7eb;
+  --shadow: 0 8px 25px rgba(23, 59, 80, 0.06);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -71,30 +88,246 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  border-radius: 12px;
+  background: var(--mint);
+  color: var(--teal);
+  font-size: 1.3rem;
+}
+
+.brand-highlight {
+  color: var(--teal);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.2;
+}
+
+.brand-name {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.brand-subtitle {
+  display: block;
+  margin-top: 5px;
+  color: #687c85;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 640px) {
+  .brand-subtitle {
+    max-width: 245px;
+    font-size: 0.62rem;
+  }
+  .brand-name {
+    font-size: 1.25rem;
+  }
+}
+
+.top-nav {
+  display: flex;
   align-items: center;
-  padding: 40px 20px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.nav-link {
+  color: #4d626c;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 550;
+  padding: 9px 11px;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: var(--mint-light);
+  color: var(--navy);
+}
+
+.nav-link:focus-visible,
+.brand:focus-visible {
+  outline: 3px solid #82b5aa;
+  outline-offset: 3px;
 }
 
 /* =========================================
-   CONTEÚDO PRINCIPAL
+   CONTEÚDO PRINCIPAL E LAYOUTS
 ========================================= */
 
 .container {
   width: 100%;
-  max-width: 900px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 36px 24px 52px;
 }
 
-/* Cabeçalho */
-.header {
-  margin-bottom: 32px;
+.page-content {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* Caixa de Boas-Vindas / Apresentação */
+.welcome-box {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px 48px;
+  box-shadow: var(--shadow);
+  margin-bottom: 48px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--mint);
+  color: var(--navy);
+  padding: 7px 15px;
+  border-radius: 999px;
+  font-size: 0.83rem;
+  font-weight: 650;
+  margin-bottom: 18px;
+}
+
+.badge i {
+  color: var(--teal);
+}
+
+.welcome-title {
+  color: var(--navy);
+  font-size: clamp(2rem, 4vw, 2.65rem);
+  line-height: 1.2;
+  letter-spacing: -1px;
+  margin-bottom: 14px;
+}
+
+.tagline {
+  max-width: 760px;
+  color: var(--teal);
+  font-size: 1.12rem;
+  line-height: 1.7;
+  font-weight: 500;
+  margin-bottom: 28px;
+}
+
+.welcome-text {
+  color: #415760;
+  font-size: 0.98rem;
+  line-height: 1.85;
+}
+
+.welcome-text > p {
+  margin-bottom: 16px;
+}
+
+.welcome-text strong {
+  color: var(--navy);
+}
+
+.section-title {
+  color: var(--navy);
+  font-size: 1.42rem;
+  line-height: 1.4;
+  margin-top: 34px;
+  margin-bottom: 14px;
+  padding-left: 14px;
+  border-left: 4px solid #8bb8a8;
+}
+
+.manifesto-pill {
+  margin-top: 24px;
+  padding: 20px;
+  background: var(--mint-light);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  text-align: center;
+  color: var(--navy);
+}
+
+/* =========================================
+   QUATRO ÁREAS DE ATUAÇÃO
+========================================= */
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 22px 0 28px;
+}
+
+.feature-item {
+  background: var(--mint-light);
+  border: 1px solid #e0ebe5;
+  border-radius: 14px;
+  padding: 23px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(23, 59, 80, 0.05);
+}
+
+.feature-icon {
+  display: inline-flex;
+  color: var(--teal);
+  font-size: 1.55rem;
+  margin-bottom: 10px;
+}
+
+.feature-item h3 {
+  color: var(--navy);
+  font-size: 1.02rem;
+  line-height: 1.45;
+  margin-bottom: 8px;
+}
+
+.feature-item p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* =========================================
+   SEÇÃO DE RECURSOS E CARDS DE NAVEGAÇÃO
+========================================= */
+
+.resources-section {
+  margin-top: 8px;
+}
+
+.resources-heading {
   text-align: center;
   margin-bottom: 26px;
 }
 
-.header h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #0f172a;
+.eyebrow {
+  display: inline-block;
+  color: var(--teal);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.75rem;
+  font-weight: 750;
+  margin-bottom: 8px;
+}
+
+.resources-heading h2 {
+  color: var(--navy);
+  font-size: 1.85rem;
+  line-height: 1.3;
   margin-bottom: 8px;
 }
 
@@ -103,11 +336,10 @@ button {
   font-size: 0.96rem;
 }
 
-/* Estrutura do Grid (2 colunas como na imagem) */
 .menu-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 24px;
 }
 
 .menu-card {
@@ -115,31 +347,30 @@ button {
   min-height: 160px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  background-color: #ffffff;
-  padding: 24px;
-  border-radius: 12px;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 25px 26px;
+  padding-right: 46px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
   text-decoration: none;
-  border: 1px solid #e2e8f0;
-  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 5px rgba(23, 59, 80, 0.015);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-/* Efeito ao passar o mouse */
-a.menu-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.05);
-  border-color: #cbd5e1;
+.menu-card:hover {
+  transform: translateY(-3px);
+  border-color: #b9d2c8;
+  box-shadow: 0 10px 24px rgba(23, 59, 80, 0.07);
 }
 
-a.menu-card:focus-visible {
-  outline: 3px solid #2563eb;
+.menu-card:focus-visible {
+  outline: 3px solid #82b5aa;
   outline-offset: 3px;
 }
 
-/* Ícones */
 .icon-wrapper {
-  font-size: 1.5rem;
-  color: #1e293b;
   display: flex;
   align-items: center;
   color: var(--teal);
@@ -161,55 +392,41 @@ a.menu-card:focus-visible {
   line-height: 1.65;
 }
 
-.availability {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 3px 9px;
-  border-radius: 999px;
-  background-color: #f1f5f9;
-  color: #475569;
-  font-size: 0.75rem;
-  font-weight: 600;
+.card-arrow {
+  position: absolute;
+  top: 24px;
+  right: 23px;
+  color: #91aaa4;
+  font-size: 1rem;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
-/* Responsividade: vira 1 coluna no celular */
-@media (max-width: 640px) {
-  .menu-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-}
-/* --- Caixa Centralizada do Sobre o Projeto --- */
-
-.page-content {
-  max-width: 760px;
-  margin: 0 auto;
+.menu-card:hover .card-arrow {
+  color: var(--teal);
+  transform: translate(2px, -2px);
 }
 
-/* Botão voltar centralizado */
+/* =========================================
+   PÁGINA SOBRE O PROJETO (FUNDADORAS)
+========================================= */
+
 .back-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  color: #2563eb;
+  color: var(--teal);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 550;
   margin-bottom: 20px;
   font-size: 0.95rem;
-  width: 100%;
-  text-align: center;
   transition: color 0.2s ease;
 }
 
 .back-link:hover {
-  color: #1d4ed8;
+  color: var(--navy);
   text-decoration: underline;
 }
-
-/* =========================================
-   PÁGINA SOBRE O PROJETO (ESTILOS AMPLIADOS)
-========================================= */
 
 .about-card {
   background: var(--white);
@@ -300,7 +517,6 @@ a.menu-card:focus-visible {
 }
 
 /* Grid Lado a Lado das Fundadoras */
-
 .founders-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -419,6 +635,8 @@ a.menu-card:focus-visible {
 ========================================= */
 
 .rodape {
+  width: 100%;
+  margin-top: 60px;
   padding: 32px 20px;
   border-top: 1px solid var(--border);
   background: var(--white);
@@ -437,6 +655,7 @@ a.menu-card:focus-visible {
 .rodape > p {
   color: var(--muted);
   font-size: 13px;
+  margin: 0;
 }
 
 .rodape .rodape-frase {
@@ -445,7 +664,7 @@ a.menu-card:focus-visible {
 }
 
 /* =========================================
-   TABLETS E CELULARES
+   RESPONSIVIDADE (TABLETS E CELULARES)
 ========================================= */
 
 @media (max-width: 1000px) {
@@ -455,11 +674,9 @@ a.menu-card:focus-visible {
     gap: 10px;
     padding: 15px 20px;
   }
-
   .top-nav {
     justify-content: center;
   }
-
   .nav-link {
     font-size: 0.82rem;
   }
@@ -469,7 +686,6 @@ a.menu-card:focus-visible {
   .about-card-spacious {
     padding: 30px 20px !important;
   }
-
   .founders-grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -480,57 +696,45 @@ a.menu-card:focus-visible {
   .container {
     padding: 24px 15px 38px;
   }
-
   .nav-container {
     padding: 12px 14px;
   }
-
   .top-nav {
     gap: 4px;
   }
-
   .nav-link {
     padding: 7px 9px;
     font-size: 0.78rem;
   }
-
   .welcome-box {
     padding: 28px 20px;
     border-radius: 16px;
     margin-bottom: 36px;
   }
-
   .welcome-title {
     font-size: 1.9rem;
   }
-
   .tagline {
     font-size: 1rem;
   }
-
   .section-title {
     font-size: 1.22rem;
     margin-top: 28px;
   }
-
   .features-grid {
     grid-template-columns: 1fr;
     gap: 13px;
   }
-
   .feature-item {
     padding: 20px;
   }
-
   .resources-heading h2 {
     font-size: 1.55rem;
   }
-
   .menu-grid {
     grid-template-columns: 1fr;
     gap: 15px;
   }
-
   .menu-card {
     min-height: 145px;
     padding: 22px;

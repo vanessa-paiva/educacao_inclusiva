@@ -55,564 +55,134 @@
 
             <div class="informacoes-guia" style="display: flex; gap: 20px; font-size: 0.9rem; color: var(--muted); margin-top: 15px;">
                 <span>📚 Ensino Fundamental e Médio</span>
-                <span>📥 Formato pronto (PDF / DOC)</span>
+                <span>📥 Formato editável (DOCX) e PDF</span>
             </div>
         </section>
 
-        <!-- Barra de Filtros por Matéria -->
+        <!-- Barra de Filtros por Matéria (Separadas) -->
         <div class="filter-bar">
             <button class="filter-btn active" data-filter="all">Todas</button>
             <button class="filter-btn" data-filter="matematica">Matemática</button>
             <button class="filter-btn" data-filter="portugues">Português</button>
             <button class="filter-btn" data-filter="ciencias">Ciências</button>
-            <button class="filter-btn" data-filter="humanas">História / Geografia</button>
+            <button class="filter-btn" data-filter="historia">História</button>
+            <button class="filter-btn" data-filter="geografia">Geografia</button>
+            <button class="filter-btn" data-filter="ingles">Inglês</button>
         </div>
 
-        <!-- Grade de Atividades por Matéria -->
+        <!-- Grade de Atividades -->
         <div class="activities-grid">
 
-           <!-- Card: Aritmética Básica -->
-            <div class="activity-card" data-category="matematica" data-materia="matematica">
+            <!-- Card 1: Matemática -->
+            <div class="activity-card" data-category="matematica">
                 <div class="activity-header">
                     <span class="activity-tag">Matemática</span>
                     <span class="activity-level">Ensino Fundamental I / II</span>
                 </div>
                 <div class="activity-body">
-                    <h3>Aritmética Básica</h3>
-                    <p>Operações fundamentais (adição, subtração, multiplicação e divisão) com apoio visual, decomposição numérica e material manipulável estruturado.</p>
+                    <h3>Sistema Monetário e Troco Simples</h3>
+                    <p>Atividade prática com situações-problema do cotidiano envolvendo cédulas, moedas e cálculo de troco com apoio visual.</p>
                 </div>
                 <div class="activity-footer">
                     <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Aritmetica_Basica.docx" download="Aritmetica_Basica.docx" class="btn-download">
+                    <a href="Sistema_Monetario.docx" download="Sistema_Monetario.docx" class="download-btn">
                         <i class="bi bi-download"></i> Baixar
                     </a>
                 </div>
             </div>
 
-            <!-- Card: Sistema Monetário e Matemática Financeira -->
-            <div class="activity-card" data-category="matematica" data-materia="matematica">
-                <div class="activity-header">
-                    <span class="activity-tag">Matemática</span>
-                    <span class="activity-level">Ensino Fundamental I / II</span>
-                </div>
-                <div class="activity-body">
-                    <h3>Sistema Monetário e Matemática Financeira</h3>
-                    <p>Resolução de situações-problema do cotidiano envolvendo cédulas, moedas, cálculo de troco, descontos simples e planejamento financeiro com pistas visuais.</p>
-                </div>
-                <div class="activity-footer">
-                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Sistema_Monetário_e_Matemática_Financeira.docx" download="Sistema_Monetario_e_Matematica_Financeira.docx" class="btn-download">
-                        <i class="bi bi-download"></i> Baixar
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card: Geometria Plana e Espacial -->
-            <div class="activity-card" data-category="matematica" data-materia="matematica">
-                <div class="activity-header">
-                    <span class="activity-tag">Matemática</span>
-                    <span class="activity-level">Ensino Fundamental I / II</span>
-                </div>
-                <div class="activity-body">
-                    <h3>Geometria Plana e Espacial</h3>
-                    <p>Identificação e contagem de lados, vértices, faces e arestas de figuras e sólidos geométricos com suporte ilustrado e comparação prática.</p>
-                </div>
-                <div class="activity-footer">
-                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Geometria_Plana_e_Espacial.docx" download="Geometria_Plana_e_Espacial.docx" class="btn-download">
-                        <i class="bi bi-download"></i> Baixar
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card: Álgebra e Equações -->
-            <div class="activity-card" data-category="matematica" data-materia="matematica">
-                <div class="activity-header">
-                    <span class="activity-tag">Matemática</span>
-                    <span class="activity-level">Ensino Fundamental II / Médio</span>
-                </div>
-                <div class="activity-body">
-                    <h3>Álgebra e Equações</h3>
-                    <p>Introdução ao pensamento algébrico e resolução passo a passo de equações do 1º grau utilizando o modelo visual de equilíbrio em balança.</p>
-                </div>
-                <div class="activity-footer">
-                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Álgebra_e_Equações.docx" download="Algebra_e_Equacoes.docx" class="btn-download">
-                        <i class="bi bi-download"></i> Baixar
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card: Funções -->
-            <div class="activity-card" data-category="matematica" data-materia="matematica">
-                <div class="activity-header">
-                    <span class="activity-tag">Matemática</span>
-                    <span class="activity-level">Ensino Fundamental II / Médio</span>
-                </div>
-                <div class="activity-body">
-                    <h3>Funções</h3>
-                    <p>Estudo guiado de relações de dependência entre variáveis, gráficos cartesianos simplificados e análise intuitiva de funções afim e quadrática.</p>
-                </div>
-                <div class="activity-footer">
-                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Funções.docx" download="Funcoes.docx" class="btn-download">
-                        <i class="bi bi-download"></i> Baixar
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card: Estatística e Probabilidade -->
-            <div class="activity-card" data-category="matematica" data-materia="matematica">
-                <div class="activity-header">
-                    <span class="activity-tag">Matemática</span>
-                    <span class="activity-level">Ensino Fundamental II</span>
-                </div>
-                <div class="activity-body">
-                    <h3>Estatística e Probabilidade</h3>
-                    <p>Leitura e interpretação direta de tabelas e gráficos em barras, cálculo de média aritmética simples e noções iniciais de chance com dados e roletas.</p>
-                </div>
-                <div class="activity-footer">
-                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Estatística_e_Probabilidade.docx" download="Estatistica_e_Probabilidade.docx" class="btn-download">
-                        <i class="bi bi-download"></i> Baixar
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card: Trigonometria -->
-            <div class="activity-card" data-category="matematica" data-materia="matematica">
-                <div class="activity-header">
-                    <span class="activity-tag">Matemática</span>
-                    <span class="activity-level">Ensino Médio</span>
-                </div>
-                <div class="activity-body">
-                    <h3>Trigonometria</h3>
-                    <p>Relações trigonométricas no triângulo retângulo (seno, cosseno e tangente) com esquemas de identificação clara de catetos e hipotenusa.</p>
-                </div>
-                <div class="activity-footer">
-                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Trigonometria.docx" download="Trigonometria.docx" class="btn-download">
-                        <i class="bi bi-download"></i> Baixar
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card: Razão, Proporção e Regra de Três -->
-            <div class="activity-card" data-category="matematica" data-materia="matematica">
-                <div class="activity-header">
-                    <span class="activity-tag">Matemática</span>
-                    <span class="activity-level">Ensino Fundamental II</span>
-                </div>
-                <div class="activity-body">
-                    <h3>Razão, Proporção e Regra de Três</h3>
-                    <p>Aplicação da regra de três simples por meio de quadros comparativos com setas indicativas de proporcionalidade e situações práticas.</p>
-                </div>
-                <div class="activity-footer">
-                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Razão_Proporção_e_Regra_de_Três.docx" download="Razao_Proporcao_e_Regra_de_Tres.docx" class="btn-download">
-                        <i class="bi bi-download"></i> Baixar
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card: Unidades de Medida e Grandezas -->
-            <div class="activity-card" data-category="matematica" data-materia="matematica">
-                <div class="activity-header">
-                    <span class="activity-tag">Matemática</span>
-                    <span class="activity-level">Ensino Fundamental I / II</span>
-                </div>
-                <div class="activity-body">
-                    <h3>Unidades de Medida e Grandezas</h3>
-                    <p>Conversão e estimativa de grandezas comuns (comprimento, massa, capacidade e tempo) com réguas graduadas e tabelas de referência visual.</p>
-                </div>
-                <div class="activity-footer">
-                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Unidades_de_Medida_e_Grandezas.docx" download="Unidades_de_Medida_e_Grandezas.docx" class="btn-download">
-                        <i class="bi bi-download"></i> Baixar
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card: Raciocínio Lógico e Sequências -->
-            <div class="activity-card" data-category="matematica" data-materia="matematica">
-                <div class="activity-header">
-                    <span class="activity-tag">Matemática</span>
-                    <span class="activity-level">Ensino Fundamental I / II / Enriquecimento</span>
-                </div>
-                <div class="activity-body">
-                    <h3>Raciocínio Lógico e Sequências</h3>
-                    <p>Desafios lógicos, identificação de padrões numéricos e geométricos, e estímulo à dedução para recomposição e desenvolvimento de altas habilidades.</p>
-                </div>
-                <div class="activity-footer">
-                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Raciocínio_Lógico_e_Sequências.docx" download="Raciocinio_Logico_e_Sequencias.docx" class="btn-download">
-                        <i class="bi bi-download"></i> Baixar
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card: Leitura, Interpretação e Compreensão -->
-            <div class="activity-card" data-category="portugues" data-materia="portugues">
-                <div class="activity-header">
-                    <span class="activity-tag">Língua Portuguesa</span>
-                    <span class="activity-level">Ensino Fundamental / Médio</span>
-                </div>
-                <div class="activity-body">
-                    <h3>Leitura, Interpretação e Compreensão de Textos</h3>
-                    <p>Estratégias de leitura orientada, localização de informações explícitas e inferências com apoio de pistas contextuais e visuais.</p>
-                </div>
-                <div class="activity-footer">
-                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Leitura_Interpretação_e_Compreensão_de_Textos.docx" download="Leitura_Interpretacao_e_Compreensao_de_Textos.docx" class="btn-download">
-                        <i class="bi bi-download"></i> Baixar
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card: Gêneros e Tipos Textuais -->
-            <div class="activity-card" data-category="portugues" data-materia="portugues">
-                <div class="activity-header">
-                    <span class="activity-tag">Língua Portuguesa</span>
-                    <span class="activity-level">Ensino Fundamental II / Médio</span>
-                </div>
-                <div class="activity-body">
-                    <h3>Gêneros e Tipos Textuais</h3>
-                    <p>Reconhecimento das características estruturais de gêneros cotidianos (notícia, cartaz, tirinha, conto) com diagramação comparativa.</p>
-                </div>
-                <div class="activity-footer">
-                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Gêneros_e_Tipos_Textuais.docx" download="Generos_e_Tipos_Textuais.docx" class="btn-download">
-                        <i class="bi bi-download"></i> Baixar
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card: Classes de Palavras / Morfologia -->
-            <div class="activity-card" data-category="portugues" data-materia="portugues">
-                <div class="activity-header">
-                    <span class="activity-tag">Língua Portuguesa</span>
-                    <span class="activity-level">Ensino Fundamental I / II</span>
-                </div>
-                <div class="activity-body">
-                    <h3>Classes de Palavras: Morfologia</h3>
-                    <p>Identificação e emprego de substantivos, adjetivos, verbos e pronomes por meio de esquemas visuais com códigos de cores e categorização.</p>
-                </div>
-                <div class="activity-footer">
-                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Classes_de_Palavras___Morfologia.docx" download="Classes_de_Palavras_Morfologia.docx" class="btn-download">
-                        <i class="bi bi-download"></i> Baixar
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card: Sintaxe da Oração e do Período -->
-            <div class="activity-card" data-category="portugues" data-materia="portugues">
-                <div class="activity-header">
-                    <span class="activity-tag">Língua Portuguesa</span>
-                    <span class="activity-level">Ensino Fundamental II / Médio</span>
-                </div>
-                <div class="activity-body">
-                    <h3>Sintaxe da Oração e do Período</h3>
-                    <p>Análise dos termos essenciais da oração (sujeito, predicado e complementos) estruturada em blocos modulares para facilitar o entendimento lógico.</p>
-                </div>
-                <div class="activity-footer">
-                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Sintaxe_da_Oração_e_do_Período.docx" download="Sintaxe_da_Oracao_e_do_Periodo.docx" class="btn-download">
-                        <i class="bi bi-download"></i> Baixar
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card: Acentuação Gráfica e Pontuação -->
-            <div class="activity-card" data-category="portugues" data-materia="portugues">
-                <div class="activity-header">
-                    <span class="activity-tag">Língua Portuguesa</span>
-                    <span class="activity-level">Ensino Fundamental I / II</span>
-                </div>
-                <div class="activity-body">
-                    <h3>Acentuação Gráfica e Pontuação</h3>
-                    <p>Exercícios práticos de regras de acentuação e sinais de pontuação com apoio de tabelas mnemônicas e trechos ilustrados.</p>
-                </div>
-                <div class="activity-footer">
-                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="LP_Tema_Acentuação_Gráfica_e_Pontuação(1).docx" download="Acentuacao_Grafica_e_Pontuacao.docx" class="btn-download">
-                        <i class="bi bi-download"></i> Baixar
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card: Produção de Texto e Redação Guiada -->
-            <div class="activity-card" data-category="portugues" data-materia="portugues">
-                <div class="activity-header">
-                    <span class="activity-tag">Língua Portuguesa</span>
-                    <span class="activity-level">Anos Iniciais / Fundamental II</span>
-                </div>
-                <div class="activity-body">
-                    <h3>Produção de Texto e Redação Guiada</h3>
-                    <p>Roteiro com etapas encadeadas de planejamento textual, conectivos destacados e banco de ideias para elaboração de redações e narrativas.</p>
-                </div>
-                <div class="activity-footer">
-                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Produção_de_Texto_e_Redação_Guiada.docx" download="Producao_de_Texto_e_Redacao_Guiada.docx" class="btn-download">
-                        <i class="bi bi-download"></i> Baixar
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card: Semântica e Figuras de Linguagem -->
-            <div class="activity-card" data-category="portugues" data-materia="portugues">
-                <div class="activity-header">
-                    <span class="activity-tag">Língua Portuguesa</span>
-                    <span class="activity-level">Ensino Fundamental II / Médio</span>
-                </div>
-                <div class="activity-body">
-                    <h3>Semântica e Figuras de Linguagem</h3>
-                    <p>Compreensão de sentido literal e figurado, sinônimos, antônimos e principais figuras de linguagem através de tirinhas e exemplos visuais.</p>
-                </div>
-                <div class="activity-footer">
-                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Semântica_e_Figuras_de_Linguagem.docx" download="Semantica_e_Figuras_de_Linguagem.docx" class="btn-download">
-                        <i class="bi bi-download"></i> Baixar
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card: Variedade Linguística e Preconceito Linguístico -->
-            <div class="activity-card" data-category="portugues" data-materia="portugues">
-                <div class="activity-header">
-                    <span class="activity-tag">Língua Portuguesa</span>
-                    <span class="activity-level">Ensino Fundamental II / Médio</span>
-                </div>
-                <div class="activity-body">
-                    <h3>Variedade Linguística e Preconceito Linguístico</h3>
-                    <p>Estudo das variações regionais, históricas e sociais da língua com ênfase na valorização da diversidade comunicativa e respeito cultural.</p>
-                </div>
-                <div class="activity-footer">
-                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Variedade_Linguística_e_Preconceito_Linguístico.docx" download="Variedade_Linguistica_e_Preconceito_Linguistico.docx" class="btn-download">
-                        <i class="bi bi-download"></i> Baixar
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card: Fonética e Fonologia -->
-            <div class="activity-card" data-category="portugues" data-materia="portugues">
+            <!-- Card 2: Português -->
+            <div class="activity-card" data-category="portugues">
                 <div class="activity-header">
                     <span class="activity-tag">Língua Portuguesa</span>
                     <span class="activity-level">Anos Iniciais / Recomposição</span>
                 </div>
                 <div class="activity-body">
-                    <h3>Fonética e Fonologia</h3>
-                    <p>Consciência fonológica, correspondência grafema-fonema, encontros vocálicos e consonantais com apoio sonoro-articulatório e ilustrações.</p>
+                    <h3>Leitura e Interpretação com Suporte Visual</h3>
+                    <p>Texto curto acompanhado de sequência ilustrada para exercitar a compreensão leitora e localização de informações explícitas.</p>
                 </div>
                 <div class="activity-footer">
                     <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Fonética_e_Fonologia.docx" download="Fonetica_e_Fonologia.docx" class="btn-download">
+                    <a href="Leitura_e_Interpretacao.docx" download="Leitura_e_Interpretacao.docx" class="download-btn">
                         <i class="bi bi-download"></i> Baixar
                     </a>
                 </div>
             </div>
 
-            <!-- Card: Literatura e Escolas Literárias -->
-            <div class="activity-card" data-category="portugues" data-materia="portugues">
-                <div class="activity-header">
-                    <span class="activity-tag">Língua Portuguesa</span>
-                    <span class="activity-level">Ensino Médio / Enriquecimento</span>
-                </div>
-                <div class="activity-body">
-                    <h3>Literatura e Escolas Literárias</h3>
-                    <p>Linha do tempo didática dos principais movimentos literários, autores representativos e análise de fragmentos poéticos adaptados.</p>
-                </div>
-                <div class="activity-footer">
-                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Literatura_e_Escolas_Literárias.docx" download="Literatura_e_Escolas_Literarias.docx" class="btn-download">
-                        <i class="bi bi-download"></i> Baixar
-                    </a>
-                </div>
-            </div>
-            <!-- Card 3: Ciências -->
-            <!-- Card Ciências 1: Cadeias Alimentares -->
-            <div class="activity-card" data-category="ciencias" data-materia="ciencias">
-                <div class="activity-header">
-                    <span class="activity-tag">Ciências</span>
-                    <span class="activity-level">Ensino Fundamental I / II</span>
-                </div>
-                <div class="activity-body">
-                    <h3>Cadeias e Teias Alimentares</h3>
-                    <p>Relações ecológicas entre produtores, consumidores e decompositores com esquemas de fluxo de energia e ilustrações direcionadas.</p>
-                </div>
-                <div class="activity-footer">
-                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Cadeias_Alimentares.docx" download="Cadeias_Alimentares.docx" class="btn-download">
-                        <i class="bi bi-download"></i> Baixar
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card Ciências 2: Ciclo da Água (Etapas e Estados Físicos) -->
-            <div class="activity-card" data-category="ciencias" data-materia="ciencias">
+            <!-- Card 3: Ciências (Matéria e Transformações) -->
+            <div class="activity-card" data-category="ciencias">
                 <div class="activity-header">
                     <span class="activity-tag">Ciências</span>
                     <span class="activity-level">Ensino Fundamental II</span>
                 </div>
                 <div class="activity-body">
-                    <h3>Ciclo da Água: Etapas e Estados Físicos</h3>
-                    <p>Esquema visual interativo com caixas de correspondência e perguntas guiadas para identificação das mudanças de estado da matéria.</p>
-                </div>
-                <div class="activity-footer">
-                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Ciclo_da_Agua_Etapas_Estados_Fisicos.docx" download="Ciclo_da_Agua_Etapas_Estados_Fisicos.docx" class="btn-download">
-                        <i class="bi bi-download"></i> Baixar
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card Ciências 3: Células e Genética -->
-            <div class="activity-card" data-category="ciencias" data-materia="ciencias">
-                <div class="activity-header">
-                    <span class="activity-tag">Ciências</span>
-                    <span class="activity-level">Ensino Fundamental II / Médio</span>
-                </div>
-                <div class="activity-body">
-                    <h3>Células e Genética</h3>
-                    <p>Organização celular animal e vegetal, organelas e noções fundamentais de hereditariedade e DNA por meio de modelos visuais coloridos.</p>
-                </div>
-                <div class="activity-footer">
-                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Celulas_e_Genetica.docx" download="Celulas_e_Genetica.docx" class="btn-download">
-                        <i class="bi bi-download"></i> Baixar
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card Ciências 4: Sistema Solar -->
-            <div class="activity-card" data-category="ciencias" data-materia="ciencias">
-                <div class="activity-header">
-                    <span class="activity-tag">Ciências</span>
-                    <span class="activity-level">Ensino Fundamental I / II</span>
-                </div>
-                <div class="activity-body">
-                    <h3>Sistema Solar e Astronomia</h3>
-                    <p>Identificação e ordenação dos planetas, movimentos de rotação e translação, e fases da Lua com apoio de diagramas esquemáticos.</p>
-                </div>
-                <div class="activity-footer">
-                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Sistema_Solar.docx" download="Sistema_Solar.docx" class="btn-download">
-                        <i class="bi bi-download"></i> Baixar
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card Ciências 5: Seres Vivos -->
-            <div class="activity-card" data-category="ciencias" data-materia="ciencias">
-                <div class="activity-header">
-                    <span class="activity-tag">Ciências</span>
-                    <span class="activity-level">Ensino Fundamental I / II</span>
-                </div>
-                <div class="activity-body">
-                    <h3>Classificação dos Seres Vivos</h3>
-                    <p>Diferenciação entre reinos biológicos, animais vertebrados e invertebrados, e características gerais com atividades práticas de agrupamento.</p>
-                </div>
-                <div class="activity-footer">
-                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Seres_Vivos.docx" download="Seres_Vivos.docx" class="btn-download">
-                        <i class="bi bi-download"></i> Baixar
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card Ciências 6: Meio Ambiente -->
-            <div class="activity-card" data-category="ciencias" data-materia="ciencias">
-                <div class="activity-header">
-                    <span class="activity-tag">Ciências</span>
-                    <span class="activity-level">Ensino Fundamental I / II</span>
-                </div>
-                <div class="activity-body">
-                    <h3>Meio Ambiente e Sustentabilidade</h3>
-                    <p>Reflexões guiadas sobre preservação, reciclagem, consumo consciente e impacto das ações antrópicas nos ecossistemas naturais.</p>
-                </div>
-                <div class="activity-footer">
-                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Meio_Ambiente.docx" download="Meio_Ambiente.docx" class="btn-download">
-                        <i class="bi bi-download"></i> Baixar
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card Ciências 7: Matéria e Transformações -->
-            <div class="activity-card" data-category="ciencias" data-materia="ciencias">
-                <div class="activity-header">
-                    <span class="activity-tag">Ciências</span>
-                    <span class="activity-level">Ensino Fundamental II</span>
-                </div>
-                <div class="activity-body">
-                    <h3>Matéria e Transformações Químicas</h3>
+                    <h3>Matéria e suas Transformações</h3>
                     <p>Diferenciação prática entre fenômenos físicos e químicos com base em observações cotidianas e tabelas de evidências visuais.</p>
                 </div>
                 <div class="activity-footer">
                     <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Materia_e_Transformacoes.docx" download="Materia_e_Transformacoes.docx" class="btn-download">
+                    <a href="Materia_e_Transformacoes.docx" download="Materia_e_Transformacoes.docx" class="download-btn">
                         <i class="bi bi-download"></i> Baixar
                     </a>
                 </div>
             </div>
 
-            <!-- Card Ciências 8: Máquinas Simples -->
-            <div class="activity-card" data-category="ciencias" data-materia="ciencias">
+            <!-- Card 4: Ciências (Máquinas Simples) -->
+            <div class="activity-card" data-category="ciencias">
                 <div class="activity-header">
                     <span class="activity-tag">Ciências</span>
                     <span class="activity-level">Ensino Fundamental II</span>
                 </div>
                 <div class="activity-body">
                     <h3>Máquinas Simples</h3>
-                    <p>Estudo aplicado de alavancas, roldanas e planos inclinados no dia a dia, com esquemas vetoriais simples de ponto de apoio e força.</p>
+                    <p>Estudo aplicado de alavancas, roldanas e planos inclinados no dia a dia, com esquemas visuais simples de ponto de apoio e força.</p>
                 </div>
                 <div class="activity-footer">
                     <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Maquinas_Simples.docx" download="Maquinas_Simples.docx" class="btn-download">
+                    <a href="Maquinas_Simples.docx" download="Maquinas_Simples.docx" class="download-btn">
                         <i class="bi bi-download"></i> Baixar
                     </a>
                 </div>
             </div>
 
-            <!-- Card Ciências 9: Energia -->
-            <div class="activity-card" data-category="ciencias" data-materia="ciencias">
+            <!-- Card 5: Ciências (Fontes e Formas de Energia) -->
+            <div class="activity-card" data-category="ciencias">
                 <div class="activity-header">
                     <span class="activity-tag">Ciências</span>
                     <span class="activity-level">Ensino Fundamental II / Médio</span>
                 </div>
                 <div class="activity-body">
                     <h3>Fontes e Formas de Energia</h3>
-                    <p>Comparação estruturada entre fontes renováveis e não renováveis, matriz energética e transformações térmicas, elétricas e cinéticas.</p>
+                    <p>Comparação estruturada entre fontes renováveis e não renováveis, matriz energética e transformações térmicas e elétricas.</p>
                 </div>
                 <div class="activity-footer">
                     <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Energia.docx" download="Energia.docx" class="btn-download">
+                    <a href="Energia.docx" download="Energia.docx" class="download-btn">
                         <i class="bi bi-download"></i> Baixar
                     </a>
                 </div>
             </div>
 
-            <!-- Card Ciências 10: Corpo Humano -->
-            <div class="activity-card" data-category="ciencias" data-materia="ciencias">
+            <!-- Card 6: Ciências (Corpo Humano) -->
+            <div class="activity-card" data-category="ciencias">
                 <div class="activity-header">
                     <span class="activity-tag">Ciências</span>
                     <span class="activity-level">Ensino Fundamental I / II</span>
                 </div>
                 <div class="activity-body">
                     <h3>Sistemas do Corpo Humano</h3>
-                    <p>Integração entre sistemas digestório, respiratório, circulatório e locomotor com mapas corporais demarcados para identificação de órgãos.</p>
+                    <p>Integração entre sistemas digestório, respiratório e circulatório com mapas corporais demarcados para identificação de órgãos.</p>
                 </div>
                 <div class="activity-footer">
                     <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Corpo_Humano.docx" download="Corpo_Humano.docx" class="btn-download">
+                    <a href="Corpo_Humano.docx" download="Corpo_Humano.docx" class="download-btn">
                         <i class="bi bi-download"></i> Baixar
                     </a>
                 </div>
             </div>
 
-            <!-- Card Ciências 11: Ciclo da Água (Versão Resumida) -->
-            <div class="activity-card" data-category="ciencias" data-materia="ciencias">
+            <!-- Card 7: Ciências (Ciclo da Água) -->
+            <div class="activity-card" data-category="ciencias">
                 <div class="activity-header">
                     <span class="activity-tag">Ciências</span>
                     <span class="activity-level">Anos Iniciais / Recomposição</span>
@@ -623,27 +193,67 @@
                 </div>
                 <div class="activity-footer">
                     <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
-                    <a href="Ciclo_da_Agua.docx" download="Ciclo_da_Agua.docx" class="btn-download">
+                    <a href="Ciclo_da_Agua.docx" download="Ciclo_da_Agua.docx" class="download-btn">
                         <i class="bi bi-download"></i> Baixar
                     </a>
                 </div>
             </div>
 
-            <!-- Card 4: História e Geografia -->
-            <div class="activity-card" data-category="humanas">
+            <!-- Card 8: História -->
+            <div class="activity-card" data-category="historia">
                 <div class="activity-header">
-                    <span class="activity-tag">História e Geografia</span>
+                    <span class="activity-tag">História</span>
                     <span class="activity-level">Ensino Fundamental II</span>
                 </div>
-                <h3>Paisagens e Modificações do Espaço</h3>
-                <p>Comparação guiada entre paisagens naturais e antrópicas através de fotografias com perguntas objetivas e direcionadas.</p>
+                <div class="activity-body">
+                    <h3>Patrimônios Históricos e Memória Local</h3>
+                    <p>Estudo guiado sobre monumentos e marcos da comunidade com registro visual e perguntas estruturadas sobre o tempo histórico.</p>
+                </div>
                 <div class="activity-footer">
-                    <span class="file-info"><i class="bi bi-file-earmark-pdf"></i> PDF • 3 págs</span>
-                    <a href="#" class="download-btn" onclick="alert('Aqui você poderá vincular o arquivo PDF da atividade!')">
+                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
+                    <a href="Patrimonios_Historicos.docx" download="Patrimonios_Historicos.docx" class="download-btn">
                         <i class="bi bi-download"></i> Baixar
                     </a>
                 </div>
             </div>
+
+            <!-- Card 9: Geografia -->
+            <div class="activity-card" data-category="geografia">
+                <div class="activity-header">
+                    <span class="activity-tag">Geografia</span>
+                    <span class="activity-level">Ensino Fundamental II</span>
+                </div>
+                <div class="activity-body">
+                    <h3>Paisagens e Modificações do Espaço</h3>
+                    <p>Comparação guiada entre paisagens naturais e antrópicas através de fotografias com perguntas objetivas e direcionadas.</p>
+                </div>
+                <div class="activity-footer">
+                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
+                    <a href="Paisagens_Espaco.docx" download="Paisagens_Espaco.docx" class="download-btn">
+                        <i class="bi bi-download"></i> Baixar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 10: Inglês -->
+            <div class="activity-card" data-category="ingles">
+                <div class="activity-header">
+                    <span class="activity-tag">Inglês</span>
+                    <span class="activity-level">Ensino Fundamental I / II</span>
+                </div>
+                <div class="activity-body">
+                    <h3>Greetings and Introductions (Saudações)</h3>
+                    <p>Atividade lúdica e visual com diálogos curtos para fixação de cumprimentos básicos e vocabulário cotidiano em inglês.</p>
+                </div>
+                <div class="activity-footer">
+                    <span class="file-info"><i class="bi bi-file-earmark-word text-primary"></i> DOCX • Editável</span>
+                    <a href="Greetings.docx" download="Greetings.docx" class="download-btn">
+                        <i class="bi bi-download"></i> Baixar
+                    </a>
+                </div>
+            </div>
+
+        </div>
 
     </main>
 
