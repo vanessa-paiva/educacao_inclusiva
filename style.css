@@ -344,7 +344,7 @@ button {
 
 .menu-card {
   position: relative;
-  min-height: 160px;
+  min-height: 600px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -395,7 +395,7 @@ button {
 .card-arrow {
   position: absolute;
   top: 24px;
-  right: 23px;
+  right: 99px;
   color: #91aaa4;
   font-size: 1rem;
   transition: color 0.2s ease, transform 0.2s ease;
@@ -406,99 +406,9 @@ button {
   transform: translate(2px, -2px);
 }
 
-/* =========================================
-   PÁGINA SOBRE O PROJETO (FUNDADORAS)
-========================================= */
-
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  color: var(--teal);
-  text-decoration: none;
-  font-weight: 550;
-  margin-bottom: 20px;
-  font-size: 0.95rem;
-  transition: color 0.2s ease;
-}
-
-.back-link:hover {
-  color: var(--navy);
-  text-decoration: underline;
-}
-
-.about-card {
-  background: var(--white);
-  padding: 48px 42px;
-  border-radius: 20px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-}
-
-.about-card-spacious {
-  padding: 55px 60px !important;
-}
-
-.about-header {
-  text-align: center;
-  margin-bottom: 35px;
-}
-
-.about-header h1 {
-  font-size: 2.3rem;
-  font-weight: 800;
-  color: var(--navy);
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.about-header .subtitle {
-  font-size: 1.05rem;
-  color: #475569;
-  line-height: 1.7;
-  margin-bottom: 24px;
-}
-
-.about-header .subtitle span {
-  display: block;
-  font-size: 0.95rem;
-  color: var(--muted);
-  margin-top: 4px;
-}
-
-.lead-quote {
-  font-size: 1.05rem;
-  font-style: italic;
-  color: var(--text);
-  margin: 24px auto 32px;
-  background: var(--mint-light);
-  padding: 18px 24px;
-  border-radius: 14px;
-  border: 1px solid var(--border);
-  display: block;
-  max-width: 850px;
-  text-align: center;
-}
-
-.content-block {
-  margin-bottom: 40px;
-}
-
-.content-block h2 {
-  font-size: 1.45rem;
-  color: var(--navy);
-  margin-bottom: 16px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid var(--mint);
-}
-
-.content-block p {
-  color: #415760;
-  font-size: 0.98rem;
-  line-height: 1.85;
-  margin-bottom: 16px;
-}
+/* ========================================================
+   SEÇÃO DAS FUNDADORAS (SOBRE O PROJETO)
+   ======================================================== */
 
 .founders-section-title {
   text-align: center;
@@ -516,12 +426,18 @@ button {
   font-size: 0.95rem;
 }
 
-/* Grid Lado a Lado das Fundadoras */
+/* Coloca os dois cartões lado a lado e expande na horizontal */
 .founders-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 30px;
   margin-bottom: 45px;
+}
+
+@media (max-width: 800px) {
+  .founders-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .founder-profile-card {
@@ -542,10 +458,15 @@ button {
   box-shadow: 0 12px 30px rgba(23, 59, 80, 0.08);
 }
 
+/* Círculo travado para a foto ou ícone */
 .founder-photo-box {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
+  width: 110px !important;
+  height: 110px !important;
+  min-width: 110px !important;
+  min-height: 110px !important;
+  max-width: 110px !important;
+  max-height: 110px !important;
+  border-radius: 50% !important;
   background: var(--white);
   color: var(--teal);
   display: flex;
@@ -555,14 +476,16 @@ button {
   margin-bottom: 20px;
   border: 4px solid var(--mint);
   box-shadow: 0 4px 15px rgba(71, 125, 118, 0.12);
-  overflow: hidden;
+  overflow: hidden !important;
   flex-shrink: 0;
 }
 
+/* Força a imagem a respeitar o tamanho do círculo */
 .founder-photo-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
 }
 
 .founder-info h3 {
@@ -591,43 +514,24 @@ button {
   margin: 0;
 }
 
-.tag-list {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin: 18px 0 28px;
-  padding: 0;
-}
-
-.tag-list li {
-  background: var(--mint-light);
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  color: var(--text);
-  border: 1px solid var(--border);
-}
-
-.manifesto-box {
-  margin-top: 36px;
-  padding: 28px 24px;
-  background: linear-gradient(135deg, #f0f8f3 0%, #eff5f8 100%);
-  border: 1px solid #dce9e4;
-  border-radius: 14px;
-  text-align: center;
-}
-
-.manifesto-box p {
-  margin-bottom: 12px;
-  color: var(--text);
-}
-
-.brand-tagline {
+/* Botão do Portfólio */
+.btn-portfolio {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--navy);
+  color: #ffffff;
+  padding: 9px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.88rem;
   font-weight: 600;
-  color: var(--teal);
-  font-size: 0.95rem;
+  margin-top: 16px;
+  transition: opacity 0.2s ease;
+}
+
+.btn-portfolio:hover {
+  opacity: 0.9;
 }
 
 /* =========================================
@@ -683,13 +587,16 @@ button {
 }
 
 @media (max-width: 768px) {
-  .about-card-spacious {
-    padding: 30px 20px !important;
-  }
-  .founders-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
+  ..about-card {
+  background: var(--white);
+  padding: 48px 42px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  max-width: 1050px !important; /* Alarga o card branco na horizontal */
+  width: 100% !important;
+  margin: 30px auto !important;  /* Mantém centralizado na tela */
+  box-sizing: border-box !important;
 }
 
 @media (max-width: 640px) {
