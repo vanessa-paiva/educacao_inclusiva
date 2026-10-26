@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#173B50">
+    <meta name="description" content="Adaptador pedagógico e gerador de PEI com IA - NEXO Edu">
+    <title>Adaptar com IA | NEXO Edu</title>
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- 1. Conversor de Markdown (Marked.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <!-- 2. Formatador de Símbolos e Fórmulas Matemáticas (KaTeX) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <!-- Estilos Globais -->
+    <link rel="stylesheet" href="../style.css">
+    
+    <style>
+        .tabs-ia {
+            display: flex;
+            gap: 12px;
+            margin: 25px 0 20px 0;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+        .tab-btn {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #334155;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .tab-btn.active {
+            background: #173B50;
+            color: #ffffff;
+            border-color: #173B50;
+        }
+        .form-section {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+        }
+        .form-group {
+            margin-bottom: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .form-group label {
+            font-weight: 600;
+            color: #1e293b;
+            font-size: 0.95rem;
+        }
+        .form-group input, 
+        .form-group textarea, 
+        .form-group select {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #173B50;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        .btn-gerar {
+            background: #173B50;
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.2s ease;
+        }
+        .btn-gerar:hover {
+            background: #0f2837;
+        }
+        .resultado-box {
+            margin-top: 25px;
+            padding: 20px;
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+        }
+        .resultado-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .acoes-resultado {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .resultado-conteudo {
+            background: #ffffff;
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            line-height: 1.7;
+            color: #1e293b;
+        }
+        .resultado-conteudo h2, 
+        .resultado-conteudo h3, 
+        .resultado-conteudo h4 {
+            color: #173B50;
+            margin-top: 22px;
+            margin-bottom: 10px;
+        }
+        .resultado-conteudo ul, 
+        .resultado-conteudo ol {
+            padding-left: 24px;
+            margin-bottom: 14px;
+        }
+        .resultado-conteudo p {
+            margin-bottom: 12px;
+        }
+        .resultado-conteudo hr {
+            border: none;
+            border-top: 1px solid #e2e8f0;
+            margin: 20px 0;
+        }
+        .btn-acao {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.88rem;
+            color: #334155;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
+        }
+        .btn-acao:hover {
+            background: #f1f5f9;
+            color: #0f172a;
+        }
+        .btn-acao-destaque {
+            background: #e2e8f0;
+            border-color: #94a3b8;
+        }
+        @keyframes girar {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Estilo para Impressão limpa / PDF */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            .imprimir-alvo, .imprimir-alvo * {
+                visibility: visible;
+            }
+            .imprimir-alvo {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                margin: 0;
+                padding: 10px;
+                border: none !important;
+                box-shadow: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu Superior -->
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="../index.html" class="brand" aria-label="NEXO Edu - Página inicial">
+                <span class="brand-icon"><i class="bi bi-book-half"></i></span>
+                <span class="brand-text">
+                    <span class="brand-name">NEXO <span class="brand-highlight">Edu</span></span>
+                    <span class="brand-subtitle">Núcleo de Atividades Adaptadas — do Básico ao Avançado</span>
+                </span>
+            </a>
+
+            <nav class="top-nav" aria-label="Menu principal">
+                <a href="../index.html" class="nav-link">Início</a>
+                <a href="../atividades_prontas/atividades.html" class="nav-link">Atividades prontas</a>
+                <a href="adaptar.html" class="nav-link active">Adaptar com IA</a>
+                <a href="../guias/modelo-pei.html" class="nav-link">Modelos de PEI</a>
+                <a href="../guias/guias.html" class="nav-link">Guias para professores</a>
+                <a href="../sobre.html" class="nav-link">Sobre</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <!-- Caixa de Boas-Vindas -->
+        <section class="welcome-box">
+            <span class="badge">
+                <i class="bi bi-magic"></i>
+                Inteligência Artificial Pedagógica
+            </span>
+
+            <h1 class="welcome-title">Adaptação Curricular & Elaboração de PEI</h1>
+
+            <p class="tagline">
+                “Personalização pedagógica baseada no Desenho Universal para a Aprendizagem (DUA) e alinhada às diretrizes da Educação Especial.”
+            </p>
+        </section>
+
+        <!-- Seletor de Abas -->
+        <div class="tabs-ia">
+            <button class="tab-btn active" id="btn-tab-pei" onclick="alternarAba('pei')">
+                <i class="bi bi-file-earmark-person"></i> Gerador de PEI (Anexo IV SEDUC-SP)
+            </button>
+            <button class="tab-btn" id="btn-tab-atv" onclick="alternarAba('atv')">
+                <i class="bi bi-journal-text"></i> Adaptador de Atividades de Aula
+            </button>
+        </div>
+
+        <!-- ABA 1: FORMULÁRIO DO PEI -->
+        <section id="aba-pei" class="form-section">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="pei-estudante">Nome ou Iniciais do Estudante:</label>
+                    <input type="text" id="pei-estudante" placeholder="Ex: Estudante L. M.">
+                </div>
+                <div class="form-group">
+                    <label for="pei-componente">Componente Curricular / Disciplina:</label>
+                    <input type="text" id="pei-componente" placeholder="Ex: Matemática - 8º Ano EF">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="pei-bimestre">Bimestre de Referência:</label>
+                    <select id="pei-bimestre">
+                        <option value="1º Bimestre">1º Bimestre</option>
+                        <option value="2º Bimestre">2º Bimestre</option>
+                        <option value="3º Bimestre" selected>3º Bimestre</option>
+                        <option value="4º Bimestre">4º Bimestre</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pei-especificidade">Especificidade / Diagnóstico / Apoio AEE:</label>
+                    <input type="text" id="pei-especificidade" placeholder="Ex: TEA nível 1, Baixa Visão, DI, TDAH...">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="pei-perfil">1. Caracterização e Perfil de Aprendizagem do Estudante:</label>
+                <textarea id="pei-perfil" rows="3" placeholder="Descreva os pontos fortes, interesses, estilo de aprendizagem (ex: apoio visual, necessidade de fragmentação de tarefas, tempo estendido, recursos táteis)..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="pei-habilidades">2. Conteúdos e Habilidades do Currículo Paulista Previstos:</label>
+                <textarea id="pei-habilidades" rows="3" placeholder="Insira o código ou descrição da habilidade prevista para a turma (Ex: EF08MA01, EF08MA02...)."></textarea>
+            </div>
+
+            <button type="button" class="btn-gerar" onclick="processarPEI()">
+                <i class="bi bi-magic"></i> Gerar Proposta de PEI
+            </button>
+
+            <!-- Área de Resultado do PEI -->
+            <div id="resultado-pei" class="resultado-box" style="display: none;">
+                <div class="resultado-header">
+                    <h4><i class="bi bi-file-earmark-check"></i> Proposta de PEI Estruturada (Anexo IV)</h4>
+                    <div class="acoes-resultado">
+                        <button class="btn-acao" onclick="copiarConteudo('conteudo-pei')">
+                            <i class="bi bi-clipboard"></i> Copiar
+                        </button>
+                        <button class="btn-acao btn-acao-destaque" onclick="baixarWord('conteudo-pei', 'PEI_Anexo_IV')">
+                            <i class="bi bi-file-earmark-word"></i> Baixar Word (.doc)
+                        </button>
+                        <button class="btn-acao" onclick="imprimirElemento('conteudo-pei', 'Proposta de PEI - Anexo IV SEDUC-SP')">
+                            <i class="bi bi-printer"></i> Imprimir / PDF
+                        </button>
+                    </div>
+                </div>
+                <div id="conteudo-pei" class="resultado-conteudo"></div>
+            </div>
+        </section>
+
+        <!-- ABA 2: FORMULÁRIO DE ADAPTAÇÃO DE ATIVIDADE -->
+        <section id="aba-atv" class="form-section" style="display: none;">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="atv-materia">Componente Curricular / Ano:</label>
+                    <input type="text" id="atv-materia" placeholder="Ex: Matemática - 6º Ano">
+                </div>
+                <div class="form-group">
+                    <label for="atv-tema">Tema ou Habilidade Trabalhada:</label>
+                    <input type="text" id="atv-tema" placeholder="Ex: Sistema Monetário e Cálculo de Troco">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="atv-perfil">1. Características e Necessidades de Acessibilidade do Estudante:</label>
+                <textarea id="atv-perfil" rows="3" placeholder="Ex: Dificuldade na leitura de enunciados longos, beneficia-se de imagens reais, necessita de alternativas reduzidas (múltipla escolha de 3 opções)..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="atv-arquivo">2. Enviar Arquivo da Aula / Atividade Original (Opcional):</label>
+                <input type="file" id="atv-arquivo" accept=".txt,.doc,.docx,.pdf">
+            </div>
+
+            <div class="form-group">
+                <label for="atv-conteudo">3. Ou Cole o Conteúdo / Enunciado Original da Aula:</label>
+                <textarea id="atv-conteudo" rows="4" placeholder="Cole aqui o texto, exercícios ou perguntas da aula que deseja adaptar..."></textarea>
+            </div>
+
+            <button type="button" class="btn-gerar" onclick="processarAtividade()">
+                <i class="bi bi-stars"></i> Adaptar Atividade com IA
+            </button>
+
+            <!-- Área de Resultado da Atividade -->
+            <div id="resultado-atv" class="resultado-box" style="display: none;">
+                <div class="resultado-header">
+                    <h4><i class="bi bi-check-circle"></i> Atividade Adaptada (Diretrizes DUA)</h4>
+                    <div class="acoes-resultado">
+                        <button class="btn-acao" onclick="copiarConteudo('conteudo-atv')">
+                            <i class="bi bi-clipboard"></i> Copiar
+                        </button>
+                        <button class="btn-acao btn-acao-destaque" onclick="baixarWord('conteudo-atv', 'Atividade_Adaptada_DUA')">
+                            <i class="bi bi-file-earmark-word"></i> Baixar Word (.doc)
+                        </button>
+                        <button class="btn-acao" onclick="imprimirElemento('conteudo-atv', 'Atividade Adaptada - DUA')">
+                            <i class="bi bi-printer"></i> Imprimir / PDF
+                        </button>
+                    </div>
+                </div>
+                <div id="conteudo-atv" class="resultado-conteudo"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé Padronizado -->
+    <footer class="rodape">
+        <a class="rodape-marca" href="../index.html">NEXO Edu</a>
+        <p>Núcleo de Atividades Adaptadas</p>
+        <p class="rodape-frase">Recursos, estratégias e tecnologia para uma educação inclusiva.</p>
+        Desenvolvido por Ariane Lima e Vanessa Paiva
+    </footer>
+
+    <!-- Lógica JavaScript Integrada -->
+    <script>
+        function alternarAba(aba) {
+            var abaPei = document.getElementById('aba-pei');
+            var abaAtv = document.getElementById('aba-atv');
+            var btnPei = document.getElementById('btn-tab-pei');
+            var btnAtv = document.getElementById('btn-tab-atv');
+
+            if (aba === 'pei') {
+                if (abaPei) abaPei.style.display = 'block';
+                if (abaAtv) abaAtv.style.display = 'none';
+                if (btnPei) btnPei.classList.add('active');
+                if (btnAtv) btnAtv.classList.remove('active');
+            } else {
+                if (abaPei) abaPei.style.display = 'none';
+                if (abaAtv) abaAtv.style.display = 'block';
+                if (btnPei) btnPei.classList.remove('active');
+                if (btnAtv) btnAtv.classList.add('active');
+            }
+        }
+
+        function obterChaveAPI() {
+            var chave = localStorage.getItem('nexo_gemini_key');
+            if (!chave || chave.trim() === '') {
+                chave = prompt('Cole aqui a sua chave de API do Gemini (Google AI Studio):');
+                if (chave && chave.trim() !== '') {
+                    chave = chave.trim();
+                    localStorage.setItem('nexo_gemini_key', chave);
+                } else {
+                    return null;
+                }
+            }
+            return chave;
+        }
+
+        function formatarConteudoCompleto(texto, container) {
+            if (!container) return;
+            container.innerHTML = marked.parse(texto);
+
+            if (window.renderMathInElement) {
+                renderMathInElement(container, {
+                    delimiters: [
+                        { left: '$$', right: '$$', display: true },
+                        { left: '$', right: '$', display: false }
+                    ],
+                    throwOnError: false
+                });
+            }
+        }
+
+        async function chamarGemini(promptTexto) {
+            var chave = obterChaveAPI();
+            if (!chave) {
+                alert('É necessária uma chave de API para processar o pedido.');
+                return null;
+            }
+
+            var url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent';
+
+            try {
+                var resposta = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-goog-api-key': chave.trim()
+                    },
+                    body: JSON.stringify({
+                        contents: [{
+                            parts: [{ text: promptTexto }]
+                        }]
+                    })
+                });
+
+                var dados = await resposta.json().catch(function() { return {}; });
+
+                if (!resposta.ok) {
+                    console.error('Erro retornado pela API:', dados);
+                    var msgErro = (dados.error && dados.error.message) ? dados.error.message : ('Código ' + resposta.status);
+                    alert('Erro retornado pela Google: ' + msgErro);
+                    return null;
+                }
+
+                if (dados.candidates && dados.candidates[0] && dados.candidates[0].content) {
+                    return dados.candidates[0].content.parts[0].text;
+                } else {
+                    alert('A IA não devolveu texto legível. Tente novamente.');
+                    return null;
+                }
+            } catch (erroRede) {
+                console.error('Falha de rede:', erroRede);
+                alert('Falha na comunicação de rede com os servidores da Google.');
+                return null;
+            }
+        }
+
+        async function processarPEI() {
+            var estudante = document.getElementById('pei-estudante') ? document.getElementById('pei-estudante').value.trim() : 'Estudante';
+            var componente = document.getElementById('pei-componente') ? document.getElementById('pei-componente').value.trim() : 'Componente Curricular';
+            var bimestre = document.getElementById('pei-bimestre') ? document.getElementById('pei-bimestre').value : '3º Bimestre';
+            var perfil = document.getElementById('pei-perfil') ? document.getElementById('pei-perfil').value.trim() : '';
+            var habilidades = document.getElementById('pei-habilidades') ? document.getElementById('pei-habilidades').value.trim() : '';
+
+            if (!perfil || !habilidades) {
+                alert('Por favor, preencha a caracterização do estudante e as habilidades curriculares.');
+                return;
+            }
+
+            var boxResultado = document.getElementById('resultado-pei');
+            var containerConteudo = document.getElementById('conteudo-pei');
+            var botao = document.querySelector('#aba-pei .btn-gerar');
+
+            if (botao) {
+                botao.disabled = true;
+                botao.innerHTML = '<i class="bi bi-hourglass-split"></i> A gerar com IA...';
+            }
+
+            if (boxResultado) boxResultado.style.display = 'block';
+            if (containerConteudo) {
+                containerConteudo.innerHTML = `
+                    <div style="text-align: center; padding: 25px;">
+                        <div style="width: 2.5rem; height: 2.5rem; border: 4px solid #cbd5e1; border-top-color: #173B50; border-radius: 50%; animation: girar 1s linear infinite; margin: 0 auto 15px auto;"></div>
+                        <p style="font-weight: 600; color: #173B50; margin-bottom: 4px;">Construindo proposta oficial do PEI (Anexo IV SEDUC-SP)...</p>
+                        <small style="color: #64748b;">Isso pode levar alguns segundos devido à profundidade pedagógica da análise.</small>
+                    </div>
+                `;
+            }
+
+            var promptPEI = 'Você é uma especialista em Educação Especial e Inclusiva da Rede Estadual Paulista.\n' +
+                'Elabore o preenchimento pedagógico formal do ANEXO IV – PLANO EDUCACIONAL INDIVIDUALIZADO (PEI) para a Secretaria da Educação do Estado de São Paulo.\n\n' +
+                'DADOS INICIAIS:\n' +
+                '- Estudante: ' + estudante + '\n' +
+                '- Componente Curricular: ' + componente + '\n' +
+                '- Período: ' + bimestre + '\n' +
+                '- Perfil e Necessidades do Estudante: ' + perfil + '\n' +
+                '- Habilidades Curriculares Previstas: ' + habilidades + '\n\n' +
+                'Estruture a resposta com as quatro seções oficiais, em linguagem técnica e com estratégias de DUA:\n\n' +
+                '1. Quais conteúdos e habilidades do Currículo da Rede Estadual Paulista serão desenvolvidos no bimestre?\n' +
+                '2. Quais estratégias, intervenções pedagógicas e recursos de acessibilidade serão utilizados para favorecer o acesso, a participação e a aprendizagem do estudante?\n' +
+                '3. Quais instrumentos serão utilizados para acompanhar o aprendizado do estudante de forma inclusiva e individualizada?\n' +
+                '4. Quais vídeos, livros, jogos, exercícios ou outras atividades podem ser indicados para apoiar, complementar, suplementar e fortalecer o aprendizado do estudante neste componente curricular, considerando suas potencialidades, especificidades e ritmo de aprendizagem?';
+
+            try {
+                var resultado = await chamarGemini(promptPEI);
+                if (containerConteudo) {
+                    if (resultado) {
+                        formatarConteudoCompleto(resultado, containerConteudo);
+                    } else {
+                        containerConteudo.innerHTML = 'Não foi possível gerar a resposta.';
+                    }
+                }
+            } catch (err) {
+                console.error(err);
+                if (containerConteudo) containerConteudo.innerText = 'Ocorreu um erro ao gerar o PEI.';
+            } finally {
+                if (botao) {
+                    botao.disabled = false;
+                    botao.innerHTML = '<i class="bi bi-magic"></i> Gerar Proposta de PEI';
+                }
+                if (boxResultado) boxResultado.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        async function processarAtividade() {
+            var materia = document.getElementById('atv-materia') ? document.getElementById('atv-materia').value.trim() : 'Geral';
+            var tema = document.getElementById('atv-tema') ? document.getElementById('atv-tema').value.trim() : 'Tema da Aula';
+            var perfil = document.getElementById('atv-perfil') ? document.getElementById('atv-perfil').value.trim() : '';
+            var conteudoOriginal = document.getElementById('atv-conteudo') ? document.getElementById('atv-conteudo').value.trim() : '';
+
+            if (!perfil) {
+                alert('Por favor, informe as características do estudante.');
+                return;
+            }
+
+            var boxResultado = document.getElementById('resultado-atv');
+            var containerConteudo = document.getElementById('conteudo-atv');
+            var botao = document.querySelector('#aba-atv .btn-gerar');
+
+            if (botao) {
+                botao.disabled = true;
+                botao.innerHTML = '<i class="bi bi-hourglass-split"></i> A adaptar atividade...';
+            }
+
+            if (boxResultado) boxResultado.style.display = 'block';
+            if (containerConteudo) {
+                containerConteudo.innerHTML = `
+                    <div style="text-align: center; padding: 25px;">
+                        <div style="width: 2.5rem; height: 2.5rem; border: 4px solid #cbd5e1; border-top-color: #173B50; border-radius: 50%; animation: girar 1s linear infinite; margin: 0 auto 15px auto;"></div>
+                        <p style="font-weight: 600; color: #173B50; margin-bottom: 4px;">Aplicando diretrizes DUA e adaptando a aula...</p>
+                        <small style="color: #64748b;">Estruturando objetivos, recursos e exercícios acessíveis.</small>
+                    </div>
+                `;
+            }
+
+            var promptAtividade = 'Você é uma especialista em adaptação de atividades didáticas e Desenho Universal para a Aprendizagem (DUA).\n' +
+                'Adapte a seguinte aula/atividade para o perfil do estudante indicado:\n\n' +
+                '- Componente Curricular: ' + materia + '\n' +
+                '- Tema: ' + tema + '\n' +
+                '- Perfil do Estudante: ' + perfil + '\n' +
+                '- Conteúdo Original: ' + (conteudoOriginal || 'Crie uma atividade adaptada de raiz para a temática.') + '\n\n' +
+                'Estrutura exigida:\n' +
+                '1. Objetivo da Atividade Adaptada\n' +
+                '2. Recursos e Estratégias de Acessibilidade Empregues\n' +
+                '3. Atividade Pronta para o Aluno (enunciados diretos, 3 a 4 exercícios adaptados).\n' +
+                'Orientações de notação: para fórmulas, setas e potências, utilize notação padrão clara (ex: $10^2$, $\\rightarrow$, $\\times$).';
+
+            try {
+                var resultado = await chamarGemini(promptAtividade);
+                if (containerConteudo) {
+                    if (resultado) {
+                        formatarConteudoCompleto(resultado, containerConteudo);
+                    } else {
+                        containerConteudo.innerHTML = 'Não foi possível adaptar a atividade.';
+                    }
+                }
+            } catch (err) {
+                console.error(err);
+                if (containerConteudo) containerConteudo.innerText = 'Ocorreu um erro ao processar a atividade.';
+            } finally {
+                if (botao) {
+                    botao.disabled = false;
+                    botao.innerHTML = '<i class="bi bi-stars"></i> Adaptar Atividade com IA';
+                }
+                if (boxResultado) boxResultado.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function copiarConteudo(idElemento) {
+            var elemento = document.getElementById(idElemento);
+            if (!elemento) return;
+            var texto = elemento.innerText;
+            navigator.clipboard.writeText(texto).then(function() {
+                alert('Conteúdo copiado para a área de transferência com sucesso!');
+            });
+        }
+
+        // Função para exportar diretamente para arquivo Word (.doc)
+        function baixarWord(idElemento, prefixoNome) {
+            var elemento = document.getElementById(idElemento);
+            if (!elemento || !elemento.innerHTML.trim()) {
+                alert('Não há conteúdo gerado para descarregar.');
+                return;
+            }
+
+            var conteudoHtml = `
+                <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+                <head>
+                    <meta charset='utf-8'>
+                    <title>${prefixoNome}</title>
+                    <style>
+                        body { font-family: 'Calibri', 'Arial', sans-serif; font-size: 11pt; line-height: 1.5; color: #1e293b; }
+                        h1, h2, h3, h4 { color: #173B50; font-family: 'Calibri', 'Arial', sans-serif; }
+                        h2 { font-size: 15pt; border-bottom: 1px solid #173B50; padding-bottom: 4px; margin-top: 18pt; }
+                        h3 { font-size: 13pt; margin-top: 14pt; }
+                        ul, ol { margin-left: 20px; }
+                        li { margin-bottom: 4pt; }
+                        p { margin-bottom: 8pt; }
+                        hr { border: none; border-top: 1px solid #cbd5e1; margin: 15pt 0; }
+                    </style>
+                </head>
+                <body>
+                    ${elemento.innerHTML}
+                </body>
+                </html>
+            `;
+
+            var blob = new Blob(['\ufeff', conteudoHtml], {
+                type: 'application/msword'
+            });
+
+            var link = document.createElement('a');
+            var dataAtual = new Date().toISOString().slice(0, 10);
+            link.href = URL.createObjectURL(blob);
+            link.download = `${prefixoNome}_${dataAtual}.doc`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(link.href);
+        }
+
+        // Função para preparar impressão / Salvar como PDF
+        function imprimirElemento(idElemento, tituloDocumento) {
+            var elemento = document.getElementById(idElemento);
+            if (!elemento || !elemento.innerHTML.trim()) {
+                alert('Não há conteúdo gerado para imprimir.');
+                return;
+            }
+
+            // Adiciona classe de impressão ao container de resultado
+            elemento.classList.add('imprimir-alvo');
+            var tituloOriginal = document.title;
+            if (tituloDocumento) document.title = tituloDocumento;
+
+            window.print();
+
+            // Restaura o estado normal após fechar a janela de impressão
+            setTimeout(function() {
+                elemento.classList.remove('imprimir-alvo');
+                document.title = tituloOriginal;
+            }, 500);
+        }
+    </script>
+</body>
+</html>
