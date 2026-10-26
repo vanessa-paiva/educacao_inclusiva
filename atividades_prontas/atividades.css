@@ -34,12 +34,13 @@
     border-color: var(--teal, #477d76);
 }
 
-/* Grade de Cartões de Atividades */
+/* Grade de Cartões de Atividades (Ajustada para alinhar perfeitamente os pares) */
 .activities-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
     margin-bottom: 50px;
+    align-items: stretch; /* Força todas as linhas da grid a esticarem por igual */
 }
 
 .activity-card {
@@ -50,8 +51,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%; /* Garante que o card ocupe toda a altura da linha, travando o desalinhamento */
+    box-sizing: border-box;
     box-shadow: 0 4px 15px rgba(23, 59, 80, 0.03);
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.activities-grid {
+    grid-auto-rows: 1fr;
 }
 
 .activity-card:hover {
@@ -121,7 +128,9 @@
     font-size: 1rem;
 }
 
-.download-btn {
+/* Suporte para ambas as classes de botão (download-btn e btn-download) */
+.download-btn,
+.btn-download {
     background: var(--teal, #477d76);
     color: var(--white, #ffffff);
     padding: 8px 16px;
@@ -135,9 +144,11 @@
     transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.download-btn:hover {
+.download-btn:hover,
+.btn-download:hover {
     background: var(--navy, #173b50);
     transform: translateY(-2px);
+    color: var(--white, #ffffff);
 }
 
 /* =========================================

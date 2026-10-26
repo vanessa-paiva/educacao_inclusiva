@@ -344,7 +344,7 @@ button {
 
 .menu-card {
   position: relative;
-  min-height: 600px;
+  min-height: 160px; /* Corrigido para o tamanho padrão correto */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -395,7 +395,7 @@ button {
 .card-arrow {
   position: absolute;
   top: 24px;
-  right: 99px;
+  right: 23px; /* Corrigido o alinhamento da seta */
   color: #91aaa4;
   font-size: 1rem;
   transition: color 0.2s ease, transform 0.2s ease;
@@ -426,7 +426,6 @@ button {
   font-size: 0.95rem;
 }
 
-/* Coloca os dois cartões lado a lado e expande na horizontal */
 .founders-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -458,7 +457,6 @@ button {
   box-shadow: 0 12px 30px rgba(23, 59, 80, 0.08);
 }
 
-/* Círculo travado para a foto ou ícone */
 .founder-photo-box {
   width: 110px !important;
   height: 110px !important;
@@ -480,7 +478,6 @@ button {
   flex-shrink: 0;
 }
 
-/* Força a imagem a respeitar o tamanho do círculo */
 .founder-photo-box img {
   width: 100% !important;
   height: 100% !important;
@@ -514,7 +511,6 @@ button {
   margin: 0;
 }
 
-/* Botão do Portfólio */
 .btn-portfolio {
   display: inline-flex;
   align-items: center;
@@ -587,16 +583,21 @@ button {
 }
 
 @media (max-width: 768px) {
-  ..about-card {
-  background: var(--white);
-  padding: 48px 42px;
-  border-radius: 20px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  max-width: 1050px !important; /* Alarga o card branco na horizontal */
-  width: 100% !important;
-  margin: 30px auto !important;  /* Mantém centralizado na tela */
-  box-sizing: border-box !important;
+  .about-card {
+    background: var(--white);
+    padding: 35px 20px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    max-width: 1050px;
+    width: 100%;
+    margin: 30px auto;
+    box-sizing: border-box;
+  }
+  .founders-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
 
 @media (max-width: 640px) {
