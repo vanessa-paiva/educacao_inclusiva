@@ -648,4 +648,10 @@ button {
     padding: 22px;
     padding-right: 45px;
   }
+
+  /* Alargamento elegante para a página Sobre */
+.page-content-wide {
+  max-width: 960px !important;
+  margin: 0 auto;
+}
 }
