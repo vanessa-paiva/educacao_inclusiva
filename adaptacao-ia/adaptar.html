@@ -401,20 +401,6 @@
             }
         }
 
-        function obterChaveAPI() {
-            var chave = localStorage.getItem('nexo_gemini_key');
-            if (!chave || chave.trim() === '') {
-                chave = prompt('Cole aqui a sua chave de API do Gemini (Google AI Studio):');
-                if (chave && chave.trim() !== '') {
-                    chave = chave.trim();
-                    localStorage.setItem('nexo_gemini_key', chave);
-                } else {
-                    return null;
-                }
-            }
-            return chave;
-        }
-
         function formatarConteudoCompleto(texto, container) {
             if (!container) return;
             container.innerHTML = marked.parse(texto);
@@ -431,25 +417,16 @@
         }
 
         async function chamarGemini(promptTexto) {
-            var chave = obterChaveAPI();
-            if (!chave) {
-                alert('É necessária uma chave de API para processar o pedido.');
-                return null;
-            }
-
-            var url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent';
+            var url = '/api/gerar-atividade';
 
             try {
                 var resposta = await fetch(url, {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json',
-                        'X-goog-api-key': chave.trim()
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        contents: [{
-                            parts: [{ text: promptTexto }]
-                        }]
+                        prompt: promptTexto
                     })
                 });
 
@@ -457,20 +434,20 @@
 
                 if (!resposta.ok) {
                     console.error('Erro retornado pela API:', dados);
-                    var msgErro = (dados.error && dados.error.message) ? dados.error.message : ('Código ' + resposta.status);
-                    alert('Erro retornado pela Google: ' + msgErro);
+                    var msgErro = dados.error || ('Código ' + resposta.status);
+                    alert('Erro ao processar a atividade: ' + msgErro);
                     return null;
                 }
 
-                if (dados.candidates && dados.candidates[0] && dados.candidates[0].content) {
-                    return dados.candidates[0].content.parts[0].text;
+                if (dados.resultado) {
+                    return dados.resultado;
                 } else {
                     alert('A IA não devolveu texto legível. Tente novamente.');
                     return null;
                 }
             } catch (erroRede) {
                 console.error('Falha de rede:', erroRede);
-                alert('Falha na comunicação de rede com os servidores da Google.');
+                alert('Falha na comunicação de rede com o servidor.');
                 return null;
             }
         }
