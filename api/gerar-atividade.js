@@ -11,15 +11,19 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Método não permitido' });
   }
 
-  const { prompt } = req.body;
+  const { prompt } = req.body || {};
   const apiKey = process.env.GEMINI_API_KEY;
 
   if (!apiKey) {
     return res.status(500).json({ error: 'Chave de API não configurada na Vercel' });
   }
 
+  if (!prompt) {
+    return res.status(400).json({ error: 'Prompt não fornecido' });
+  }
+
   try {
-    const response = await fetch(
+    const apiResponse = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
       {
         method: 'POST',
@@ -30,11 +34,21 @@ export default async function handler(req, res) {
       }
     );
 
-    const data = await response.json();
-    const textoGerado = data.candidates?.[0]?.content?.parts?.[0]?.text || 'Não foi possível gerar a atividade.';
+    const data = await apiResponse.json();
+
+    if (!apiResponse.ok) {
+      const errorMsg = data.error?.message || 'Erro na API do Gemini';
+      return res.status(500).json({ error: errorMsg });
+    }
+
+    const textoGerado = data.candidates?.[0]?.content?.parts?.[0]?.text;
+
+    if (!textoGerado) {
+      return res.stgitatus(500).json({ error: 'A IA não retornou conteúdo válido.' });
+    }
 
     return res.status(200).json({ resultado: textoGerado });
   } catch (error) {
-    return res.status(500).json({ error: 'Erro ao conectar com a IA' });
+    return res.status(500).json({ error: 'Erro interno ao conectar com a IA: ' + error.message });
   }
 }
