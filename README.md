@@ -17,13 +17,17 @@ A proposta do TransformEdu é fornecer materiais estruturados, editáveis e pron
 
 ---
 
-## 📚 Disciplinas e Conteúdos Disponíveis
+## 📚 Disciplinas e Conteúdos Adaptados
 
-* **🔬 Ciências:** Cadeias Alimentares, Ciclo da Água, Sistema Solar, Corpo Humano, Estados da Matéria, entre outros.
-* **🇬🇧 Inglês:** Verb To Be, Greetings, Simple Present/Past, Vocabulary Builder, Pronouns e interpretação de texto.
-* **🌍 Geografia:** Agropecuária e Espaço Rural, Cartografia, Climas do Brasil, Relevo e Meio Ambiente.
-* **📜 História & 🔢 Matemática:** Atividades em constante expansão e atualização.
+| Disciplina | Conteúdos Principais |
+| :--- | :--- |
+| 🔬 **Ciências** | Cadeias Alimentares, Ciclo da Água, Sistema Solar, Corpo Humano e Estados da Matéria. |
+| 🇺🇸 **Inglês** | Verb To Be, Greetings, Simple Present/Past, Vocabulary Builder, Pronouns e Reading. |
+| 🌍 **Geografia** | Agropecuária e Espaço Rural, Cartografia, Climas do Brasil, Relevo e Meio Ambiente. |
+| 📜 **História** | Períodos Históricos, Linhas do Tempo Visuais, Sociedades Antigas e Brasil Colonial. |
+| 🔢 **Matemática** | Operações Básicas, Geometria Espacial, Frações Ilustradas e Resolução de Problemas. |
 
+> 💡 *Todos os conteúdos são constantemente atualizados e estruturados com suportes visuais para facilitar a aprendizagem inclusiva.*
 ---
 
 ## 🛠️ Tecnologias Utilizadas
