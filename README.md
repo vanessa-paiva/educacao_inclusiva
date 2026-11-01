@@ -28,6 +28,7 @@ A proposta do TransformEdu é fornecer materiais estruturados, editáveis e pron
 | 🔢 **Matemática** | Operações Básicas, Geometria Espacial, Frações Ilustradas e Resolução de Problemas. |
 
 > 💡 *Todos os conteúdos são constantemente atualizados e estruturados com suportes visuais para facilitar a aprendizagem inclusiva.*
+
 ---
 
 ## 🛠️ Tecnologias Utilizadas
@@ -48,7 +49,7 @@ Para garantir total compatibilidade com servidores Linux na Vercel e prevenir er
 
 ## 👥 Autoria e Desenvolvimento
 
-Desenvolvido com carinho por **Vanessa Paiva** e equipa, com o propósito de transformar a prática pedagógica e fortalecer a educação inclusiva.
+Desenvolvido com dedicação por **Ariane Lima** e **Vanessa Paiva**, com o propósito de transformar a prática pedagógica e fortalecer a educação inclusiva.
 
 ---
 
