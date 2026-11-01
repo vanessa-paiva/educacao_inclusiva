@@ -2,7 +2,7 @@
 
 O **TransformEdu** é uma plataforma educacional desenvolvida para facilitar o acesso de professores e educadores a atividades pedagógicas adaptadas, focadas em promover a inclusão escolar de estudantes com necessidades educacionais específicas.
 
-🔗 **Aceda ao projeto online:** [https://transformedu-ia.vercel.app/](https://transformedu-ia.vercel.app/)
+🔗 **Acesse o projeto online:** [https://transformedu-ia.vercel.app/](https://transformedu-ia.vercel.app/)
 
 ---
 
